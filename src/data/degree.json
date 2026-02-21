@@ -1,0 +1,1053 @@
+{
+  "templateId": "tufts-soe-bscs-2027",
+  "school": "Tufts University \u2013 School of Engineering",
+  "program": "BS in Computer Science (BSCS)",
+  "catalogYear": "Class of 2027 degree sheet",
+  "minTotalSHU": 120,
+  "gradingRules": {
+    "letterGradeRequired": true,
+    "coreMinGrade": "C-"
+  },
+  "groups": [
+    {
+      "groupId": "math_natural_sciences",
+      "title": "Mathematics & Natural Sciences",
+      "items": [
+        {
+          "type": "course_or",
+          "data": {
+            "label": "Calculus I",
+            "options": [
+              {
+                "course": "MATH 32",
+                "title": "Calculus I",
+                "shu": 4
+              }
+            ]
+          }
+        },
+        {
+          "type": "course_or",
+          "data": {
+            "label": "Calculus II (or Honors Calc I-II)",
+            "options": [
+              {
+                "course": "MATH 34",
+                "title": "Calculus II",
+                "shu": 4
+              },
+              {
+                "course": "MATH 39",
+                "title": "Honors Calculus I-II",
+                "shu": 4
+              }
+            ]
+          }
+        },
+        {
+          "type": "course_or",
+          "data": {
+            "label": "Calculus III (or Honors Calc III)",
+            "options": [
+              {
+                "course": "MATH 42",
+                "title": "Calculus III",
+                "shu": 4
+              },
+              {
+                "course": "MATH 44",
+                "title": "Honors Calculus III",
+                "shu": 4
+              }
+            ]
+          }
+        },
+        {
+          "type": "course_or",
+          "data": {
+            "label": "Discrete Math / Foundations of Higher Mathematics",
+            "options": [
+              {
+                "course": "CS/MATH 61",
+                "title": "Discrete Math",
+                "shu": 3
+              },
+              {
+                "course": "MATH 65",
+                "title": "Foundations of Higher Mathematics",
+                "shu": 3
+              }
+            ],
+            "minGrade": "C-"
+          }
+        },
+        {
+          "type": "course_or",
+          "data": {
+            "label": "Linear Algebra / Abstract Linear Algebra",
+            "options": [
+              {
+                "course": "MATH 70",
+                "title": "Linear Algebra",
+                "shu": 3
+              },
+              {
+                "course": "MATH 72",
+                "title": "Abstract Linear Algebra",
+                "shu": 3
+              }
+            ],
+            "minGrade": "C-"
+          }
+        },
+        {
+          "type": "elective_set",
+          "data": {
+            "label": "BIO-CHEM-PHY Electives (two courses from different departments)",
+            "count": 2,
+            "eachMinSHU": 5,
+            "rulesRef": "notes_a"
+          }
+        },
+        {
+          "type": "elective_rule",
+          "data": {
+            "label": "Math & Natural Sciences Elective",
+            "minSHU": 3,
+            "rulesRef": "notes_b"
+          }
+        },
+        {
+          "type": "elective_rule",
+          "data": {
+            "label": "Probability & Statistics Elective",
+            "minSHU": 3,
+            "rulesRef": "notes_c"
+          }
+        }
+      ]
+    },
+    {
+      "groupId": "hass",
+      "title": "HASS",
+      "items": [
+        {
+          "type": "course_or",
+          "data": {
+            "label": "Expository Writing",
+            "options": [
+              {
+                "course": "ENG 1",
+                "title": "Expos. Writing",
+                "shu": 3
+              },
+              {
+                "course": "ENG 3",
+                "title": "Expos. Writing",
+                "shu": 3
+              }
+            ]
+          }
+        },
+        {
+          "type": "elective_rule",
+          "data": {
+            "label": "Humanities Elective",
+            "minSHU": 3,
+            "rulesRef": "notes_d"
+          }
+        },
+        {
+          "type": "elective_rule",
+          "data": {
+            "label": "Social Science Elective",
+            "minSHU": 3,
+            "rulesRef": "notes_e"
+          }
+        },
+        {
+          "type": "course_or",
+          "data": {
+            "label": "Ethics & Social Context Elective",
+            "options": [
+              {
+                "course": "PHIL 24",
+                "title": "Ethics & Social Context",
+                "shu": 3
+              },
+              {
+                "course": "EM 54",
+                "title": "Ethics & Social Context",
+                "shu": 3
+              }
+            ]
+          }
+        },
+        {
+          "type": "course",
+          "data": {
+            "course": "EM 52",
+            "title": "Technical Writing (Technical and Managerial Communication)",
+            "shu": 3
+          }
+        }
+      ]
+    },
+    {
+      "groupId": "engineering_soe",
+      "title": "Engineering (SOE requirements)",
+      "items": [
+        {
+          "type": "course",
+          "data": {
+            "course": "EN 1",
+            "title": "Applications in Engineering",
+            "shu": 3
+          }
+        },
+        {
+          "type": "course_or",
+          "data": {
+            "label": "Intro Computing in Engineering OR Engineering/Computing Elective",
+            "options": [
+              {
+                "course": "ES 2",
+                "title": "Intro. Computing in Eng.",
+                "shu": 3
+              },
+              {
+                "type": "elective_rule",
+                "label": "ENG-CS Elective",
+                "minSHU": 3,
+                "rulesRef": "notes_h"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "groupId": "cs_core",
+      "title": "Computer Science Core",
+      "items": [
+        {
+          "type": "course",
+          "data": {
+            "course": "CS 11",
+            "title": "Intro. Comp. Sci.",
+            "shu": 4
+          }
+        },
+        {
+          "type": "course",
+          "data": {
+            "course": "CS 15",
+            "title": "Data Structures",
+            "shu": 4
+          }
+        },
+        {
+          "type": "course",
+          "data": {
+            "course": "CS 40",
+            "title": "Machine Structure & Assembly-Language Prog.",
+            "shu": 5
+          }
+        },
+        {
+          "type": "course_or",
+          "data": {
+            "label": "Programming Languages",
+            "options": [
+              {
+                "course": "CS 105",
+                "title": "Programming Languages",
+                "shu": 3
+              },
+              {
+                "course": "CS 80",
+                "title": "Programming Languages",
+                "shu": 3
+              }
+            ]
+          }
+        },
+        {
+          "type": "course",
+          "data": {
+            "course": "CS 160",
+            "title": "Algorithms",
+            "shu": 4
+          }
+        },
+        {
+          "type": "course",
+          "data": {
+            "course": "CS 170",
+            "title": "Computation Theory",
+            "shu": 3
+          }
+        },
+        {
+          "type": "elective_rule",
+          "data": {
+            "label": "Systems Elective",
+            "count": 2,
+            "eachMinSHU": 3,
+            "rulesRef": "notes_i"
+          }
+        },
+        {
+          "type": "elective_rule",
+          "data": {
+            "label": "CS Elective (j)",
+            "count": 2,
+            "eachMinSHU": 3,
+            "rulesRef": "notes_j"
+          }
+        },
+        {
+          "type": "elective_rule",
+          "data": {
+            "label": "CS Elective (k)",
+            "count": 1,
+            "eachMinSHU": 3,
+            "rulesRef": "notes_k"
+          }
+        },
+        {
+          "type": "elective_rule",
+          "data": {
+            "label": "CS Elective (l)",
+            "count": 1,
+            "eachMinSHU": 3,
+            "rulesRef": "notes_l"
+          }
+        },
+        {
+          "type": "elective_rule",
+          "data": {
+            "label": "CS Social Context Elective (m)",
+            "minSHU": 2,
+            "rulesRef": "notes_m"
+          }
+        },
+        {
+          "type": "course",
+          "data": {
+            "course": "CS 97",
+            "title": "Senior Capstone Project I",
+            "shu": 3
+          }
+        },
+        {
+          "type": "course",
+          "data": {
+            "course": "CS 98",
+            "title": "Senior Capstone Project II",
+            "shu": 3
+          }
+        }
+      ]
+    },
+    {
+      "groupId": "breadth_electives",
+      "title": "Breadth Electives",
+      "items": [
+        {
+          "type": "elective_rule",
+          "data": {
+            "label": "Breadth Electives (beyond SOE HASS requirement)",
+            "minSHU": 6,
+            "rulesRef": "notes_n"
+          }
+        }
+      ]
+    }
+  ],
+  "rulesByFootnote": {
+    "notes_h": {
+      "label": "(h)",
+      "rule": "MATH 42 Calculus III subtotal \u22656 - - - -"
+    },
+    "notes_a": {
+      "label": "(a)",
+      "rule": "5 CS 105 or CS 80 Programing"
+    },
+    "notes_b": {
+      "label": "(b)",
+      "rule": "\u22653 Languages"
+    },
+    "notes_c": {
+      "label": "(c)",
+      "rule": "\u22653 CS 160 Algorithms 4"
+    },
+    "notes_i": {
+      "label": "(i)",
+      "rule": "\u22653"
+    },
+    "notes_j": {
+      "label": "(j)",
+      "rule": "\u22653"
+    },
+    "notes_d": {
+      "label": "(d)",
+      "rule": "\u22653 CS Elective"
+    },
+    "notes_k": {
+      "label": "(k)",
+      "rule": "\u22653"
+    },
+    "notes_e": {
+      "label": "(e)",
+      "rule": "\u22653 CS Elective"
+    },
+    "notes_l": {
+      "label": "(l)",
+      "rule": "\u22653"
+    },
+    "notes_f": {
+      "label": "(f)",
+      "rule": "3-4 CS Social Cont. Elective"
+    },
+    "notes_m": {
+      "label": "(m)",
+      "rule": "\u22652 (see note n)."
+    }
+  },
+  "debug": {
+    "pagesText": [
+      "Tufts University \u2013 School of Engineering\nClass of 2027 (requirements as established in the 2023-2024 Bulletin)\nBachelor of Science in Computer Science (BSCS)\nMajor Requirement\n* Courses that require a letter grade (i.e., no pass/fail), ** core courses require a C- or better\nThe BSCS comprises credit requirements and course requirements as established by the School of Engineering and Department of Computer Science. Students\nmust satisfy the SOE program requirements listed in the Credit Requirements box, as well as fulfill all course requirements. The School of Engineering requirements\nare shown in italics and fall outside second major double counting rules. Courses EN 1, (ES 2 or CS 11), and (ENG 1 or ENG 3) are required by the School of\nEngineering and may not be used to satisfy any portion of the Major Requirement. Students receiving credit for both ES 2 and CS11 must apply CS11 toward the\nSchool of Engineering requirements. SHU values listed for each course requirement reflect those associated with the corresponding Tufts course. Unless otherwise\nnoted, course requirements may be satisfied with transfer courses having SHU values that are different than those shown here. In all cases, students should enter\nthe SHUs received or earned in the correct SOE-Attribute column for a given course requirement to ensure they meet the credit requirements. For planning\npurposes, students completing the BSCS requirements with Tufts courses will earn at least 120 SHU.\nSOE Attribute SOE Attribute\nMathematics & Natural Sciences* SHU C E M NS HASS None Term Engineering* SHU C E M NS HASS None Term\nMATH 32 Calculus I 4 EN 1 Applications in Eng. 3\nMATH 34 Calculus II ES 2 Intro. Computing in Eng.\n4 \u22653\nor MATH 39 Honors Calculus I-II or ENG-CS Elective (h)\nMATH 42 Calculus III subtotal \u22656 - - - -\n4\nor MATH 44 Honors Calculus III\nCS/MATH 61 Discrete Math or SOE Attribute\nMATH 65 Foundations of higher 3 Computer Science Core** SHU C E M NS HASS None Term\nmathematics ** CS 11 Intro. Comp. Sci. 4\nMATH 70 Linear Algebra CS 15 Data Structures 4\n3\nor MATH 72 Abstract Lin. Alg. ** CS 40 Machine Structure &\n5\nBIO-CHEM-PHY Elective (a) 5 Assembly-Language Prog.\nBIO-CHEM-PHY Elective (a) 5 CS 105 or CS 80 Programing\n3-5\nMNS Elective (b) \u22653 Languages\nProb & Stat Elective (c) \u22653 CS 160 Algorithms 4\nSubtotal \u226534 - - - CS 170 Comp. Theory 3\nSystems Elective (i) \u22653\nSOE Attribute Systems Elective (i) \u22653\nHASS SHU C E M NS HASS None Term CS Elective (j) \u22653\nENG 1* Expos. Writing or ENG 3 3 CS Elective (j) \u22653\nHumanities Elective (d) \u22653 CS Elective (k) \u22653\nSocial Science Elective (e) \u22653 CS Elective (l) \u22653\nEthics & Social Context Elec. (f) 3-4 CS Social Cont. Elective(m) \u22652\nTechnical Writing (EM52) 3 CS 97 Sr. Capstone Proj. I 3\nA total of \u226524 SHU of SOE-HASS are required for the degree. List below HASS CS 98 Sr. Capstone Proj. II 3\ncourses that do not appear in the Breadth Elective Section (see note g) subtotal \u226549\nSOE Attribute\nBreadth Electives SHU C E M NS HASS None Term\n\u22656 SHU of Breadth Electives are required for the degree. List courses below\n(see note n).\nsubtotal \u226524 - - - - - subtotal \u22656\nSOE Attribute SOE Attribute\nCredit Requirements E C M NS HASS None Total Additional Courses SHU C E M NS HASS None Term\nSOE Requirements \u226530 \u226530 \u226524 - \u2265120 List below additional courses needed to satisfy the credit requirements.\nStudent Totals\nAbbreviations:\nSHU = Semester Hour Unit subtotal \u22650\nSOE = School of Engineering\nC = Courses having attribute SOE-Computing\nE = Courses having attribute SOE-Engineering\nM = Courses having attribute SOE-Mathematics\nNS = Courses having attribute SOE-Natural Sciences\nHASS = Course having attribute SOE-HASS (Humanities, Arts, and Social Sciences)\nNone = Course without SOE attribute\nStudent and Advisor Notes:",
+      "BSCS Notes\n(a) Biology, Chemistry or Physics\nChoose two courses from different departments, chosen from:\nPHY 11, CHEM 1, 11, or 16, BIO 13* or 14\n*Students interested in multiple courses in biology should take BIO13+15.\nNote that BIO 13 cannot be taken in the first year, while all courses in CHEM and PHY can be taken then.\n(b) Mathematics & Natural Sciences Elective\nSelected course may not be used to fulfill any other course requirement. Select courses worth at least three credits, from:\nAny course having attribute SOE-Mathematics\nAny course having attribute SOE-Natural Sciences\n(c) Probability & Statistics\nSelected course may not be used to fulfill any other course requirement. Select From:\nMATH 166, ES 56, EE 24, EE 104, BME 141, PHY 153\n(d) Humanities Elective\nAt least 3 SHU of Humanities are required. Requirement may not be satisfied with pre-matriculation credits, ENG 1, ENG 3, a course satisfying the Social\nSciences Elective (e), or a course satisfying the Ethics & Social Context Elective (g).\nSelect From:\nAny course having attribute SOE-HASS-Humanities\n(e) Social Sciences Elective\nAt least 3 SHU of Social Sciences are required. Requirement may not be satisfied with pre-matriculation credits\nor a course satisfying the Humanities elective (d), a course satisfying the Ethics & Social Context Elective (f), or\nthe Technical Writing course, EM 52.\nSelect from:\nAny course having attribute SOE-HASS-Social Sciences\n(f) Ethics & Social Context Elective\nSelect from:\nPHIL 24 or EM 54\n(g) Humanities, Arts or Social Sciences Electives\nSelect from:\nAny course having attribute SOE-HASS\nAny course having attribute SOE-HASS-Humanities\nAny course having attribute SOE-HASS-Arts\nAny course having attribute SOE-HASS-Social Sciences\n(h) Engineering or Computing Elective\nSelected course may not be used to fulfill any other course requirement.\nSelect any course of 3 SHU or more from:\nAny course having attribute SOE-Computing\nAny course having attribute SOE-Engineering\n(i) Systems Elective:\nSelected course may not be used to fulfill any other course requirement.Select from:\nES 4, EE 14, EE20, CS 45, 111, 112, 114, 116, 117, 118, 119, 120, 121, 122, 124, 140, 146, 147\n(j) CS Elective\nSelected course may not be used to fulfill any other course requirement.\nSelect from:\nCS courses numbered between 100 and 179, excluding CS 153-155\n(k) CS Elective\nSelected course may not be used to fulfill any other course requirement.\nSelect from:\nCS courses numbered between 16 and 199, excluding CS 53-55, 61, 97-99, 153-155, and 182-188\n(l) CS Elective\nSelected course may not be used to fulfill any other course requirement.\nSelect from:\nCS courses numbered between 16 and 179 excluding CS 53-55, CS 61, CS 93-99, CS 153-155;\nMATH 42, 44, 51, 63, 70, 72, 87, 123, 125, 126, 133, 135, 136, 145, 146, 155, 156, 165, or 166\n(m) CS Social Context Elective\nSelected course may not be used to fulfill any other course requirement.\nSelect from:\nCS 27, 28, 55, 116, 120, 139, 155, 182-188\n(n) Breadth Electives beyond the SOE HASS requirement:\nSelected course may not be used to fulfill any other course requirement even the HASS requirement.\nSelect from:\nAny course having attribute SOE-HASS\nBME 50 Introduction to Biomedical Engineering\nCEE 32 Engineering for a Sustainable and Resilient Society\nAt most one of ME 10, 20, 30, 40, 50\nAny ENP, ENT, or EM course\nMaximum of two computer science internships (CS 99)\nES 85 Preparation for Cooperative Education\nMaximum of one course from the Experimental College (EXP)\nMaximum of one course from Physical Education (PE)",
+      "BSCS Course Selection Guidance\nFall Semester, First Year Spring Semester, First Year\nCourse SHU SOE Attribute Course SHU SOE Attribute\nEN 1 Introduction to Engineering 3 Engineering CS 11 Intro. Computer Science 4 Engineering\nMATH 32 Calculus I (or MATH 39) 4 Mathematics MATH 34 Calculus II 4 Mathematics\nCHEM-PHY Elective (a) or HASS Elective 3-5 varies with selection CHEM-PHY Elective (a) or HASS Elective 3-5 varies with selection\nHASS Elective or ENG 1 Expository Writing 3-4 HASS HASS Elective or ENG 1 Expository Writing 3-4 HASS\nSemester Total SHU 1 3-16 Semester Total SHU 1 4-17\nFall Semester, Second Year Spring Semester, Second Year\nCourse SHU SOE Attribute Course SHU SOE Attribute\nCS 15 Data Structures 4 Computing CS 40 Machine Structure & Assembly-Language Prog. 5 Computing\nCS/MATH 61 (or MATH 65) 3 Mathematics MATH 70 Linear Algebra 3 Mathematics\nBIO Elective (a) or HASS elective 3 varies with selection HASS elective 3 varies with selection\nEM 52 Technical and Managerial Communication 3 HASS ES 2 Intro. Computing in Eng. or ENG-CS Elective (h) 3-4 varies with selection\nMATH 42 4 Mathematics CS or Systems Elective 3-4 varies with selection\nSemester Total SHU 17 Semester Total SHU 1 7-19\nFall Semester, Third Year Spring Semester, Third Year\nCourse SHU SOE Attribute Course SHU SOE Attribute\nCS 160 Algorithms 4 Computing CS 105 Programing Languages 5 Computing\nCS or Systems Elective 3-4 varies with selection Probability & Statistics 3-4 varies with selection\nCS or Systems Elective 3-4 varies with selection CS or Systems Elective 3-4 varies with selection\nMNS Elective (b) 3-5 varies with selection HASS Elective 3-4 HASS\nBIO Elective (a) or HASS Elective 3-4 HASS Breadth Elective 1-4 varies with selection\nSemester Total SHU 1 6-21 Semester Total SHU 1 5-21\nFall Semester, Fourth Year Spring Semester, Fourth Year\nCourse SHU SOE Attribute Course SHU SOE Attribute\nCS 97 Senior Capstone Project I 3 Computing CS 98 Senior Capstone Project II 3 Computing\nCS 170 Computation Theory 3 Computing CS or Systems Elective 3-4 Computing\nCS or Systems Elective 3-4 varies with selection CS or Systems Elective 3-4 varies with selection\nBreadth Elective 3-4 varies with selection HASS Elective 3-4 HASS\nHASS Elective 3-5 varies with selection Unrestricted Elective, if needed 3-5 varies with selection\nSemester Total SHU 1 5-19 Semester Total SHU 1 5-20"
+    ],
+    "tables_page0": [
+      [
+        [
+          "",
+          "",
+          "SOE Attribute",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Mathematics & Natural Sciences*",
+          "SHU",
+          "C",
+          "E",
+          "M",
+          "NS",
+          "HASS",
+          "None",
+          "Term"
+        ],
+        [
+          "MATH 32 Calculus I",
+          "4",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "MATH 34 Calculus II\nor MATH 39 Honors Calculus I-II",
+          "4",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "MATH 42 Calculus III\nor MATH 44 Honors Calculus III",
+          "4",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "CS/MATH 61 Discrete Math or\nMATH 65 Foundations of higher\nmathematics **",
+          "3",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "MATH 70 Linear Algebra\nor MATH 72 Abstract Lin. Alg. **",
+          "3",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "BIO-CHEM-PHY Elective (a)",
+          "5",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "BIO-CHEM-PHY Elective (a)",
+          "5",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "MNS Elective (b)",
+          "\u22653",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Prob & Stat Elective (c)",
+          "\u22653",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Subtotal",
+          "\u226534",
+          "-",
+          "-",
+          "",
+          "",
+          "-",
+          "",
+          ""
+        ]
+      ],
+      [
+        [
+          "",
+          "",
+          "SOE Attribute",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Engineering*",
+          "SHU",
+          "C",
+          "E",
+          "M",
+          "NS",
+          "HASS",
+          "None",
+          "Term"
+        ],
+        [
+          "EN 1 Applications in Eng.",
+          "3",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "ES 2 Intro. Computing in Eng.\nor ENG-CS Elective (h)",
+          "\u22653",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "subtotal",
+          "\u22656",
+          "",
+          "",
+          "-",
+          "-",
+          "-",
+          "-",
+          ""
+        ]
+      ],
+      [
+        [
+          "",
+          "",
+          "SOE Attribute",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Computer Science Core**",
+          "SHU",
+          "C",
+          "E",
+          "M",
+          "NS",
+          "HASS",
+          "None",
+          "Term"
+        ],
+        [
+          "CS 11 Intro. Comp. Sci.",
+          "4",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "CS 15 Data Structures",
+          "4",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "CS 40 Machine Structure &\nAssembly-Language Prog.",
+          "5",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "CS 105 or CS 80 Programing\nLanguages",
+          "3-5",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "CS 160 Algorithms",
+          "4",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "CS 170 Comp. Theory",
+          "3",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Systems Elective (i)",
+          "\u22653",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Systems Elective (i)",
+          "\u22653",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "CS Elective (j)",
+          "\u22653",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "CS Elective (j)",
+          "\u22653",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "CS Elective (k)",
+          "\u22653",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "CS Elective (l)",
+          "\u22653",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "CS Social Cont. Elective(m)",
+          "\u22652",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "CS 97 Sr. Capstone Proj. I",
+          "3",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "CS 98 Sr. Capstone Proj. II",
+          "3",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "subtotal",
+          "\u226549",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ]
+      ],
+      [
+        [
+          "",
+          "",
+          "SOE Attribute",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "HASS",
+          "SHU",
+          "C",
+          "E",
+          "M",
+          "NS",
+          "HASS",
+          "None",
+          "Term"
+        ],
+        [
+          "ENG 1* Expos. Writing or ENG 3",
+          "3",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Humanities Elective (d)",
+          "\u22653",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Social Science Elective (e)",
+          "\u22653",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Ethics & Social Context Elec. (f)",
+          "3-4",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Technical Writing (EM52)",
+          "3",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "A total of \u226524 SHU of SOE-HASS are required for the degree. List below HASS\ncourses that do not appear in the Breadth Elective Section (see note g)",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "subtotal",
+          "\u226524",
+          "-",
+          "-",
+          "-",
+          "-",
+          "",
+          "-",
+          ""
+        ]
+      ],
+      [
+        [
+          "",
+          "",
+          "SOE Attribute",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Breadth Electives",
+          "SHU",
+          "C",
+          "E",
+          "M",
+          "NS",
+          "HASS",
+          "None",
+          "Term"
+        ],
+        [
+          "\u22656 SHU of Breadth Electives are required for the degree. List courses below\n(see note n).",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "subtotal",
+          "\u22656",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ]
+      ],
+      [
+        [
+          "",
+          "SOE Attribute",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Credit Requirements",
+          "E",
+          "C",
+          "M",
+          "NS",
+          "HASS",
+          "None",
+          "Total"
+        ],
+        [
+          "SOE Requirements",
+          "\u226530",
+          "",
+          "\u226530",
+          "",
+          "\u226524",
+          "-",
+          "\u2265120"
+        ],
+        [
+          "Student Totals",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ]
+      ],
+      [
+        [
+          "",
+          "",
+          "SOE Attribute",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Additional Courses",
+          "SHU",
+          "C",
+          "E",
+          "M",
+          "NS",
+          "HASS",
+          "None",
+          "Term"
+        ],
+        [
+          "List below additional courses needed to satisfy the credit requirements.",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "subtotal",
+          "\u22650",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ]
+      ]
+    ]
+  }
+}

@@ -1,0 +1,198 @@
+// prisma/schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id        String   @id @default(cuid())
+  authId    String   @unique @map("auth_id")
+  email     String?  @unique
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  profile   UserProfile?
+  courses   UserCourseStatus[]
+
+  @@map("users")
+}
+
+model Program {
+  id          String   @id @default(cuid())
+  school      String
+  name        String
+  catalogYear String   @map("catalog_year")
+
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  profiles    UserProfile[]
+  reqGroups   RequirementGroup[]
+
+  @@map("programs")
+}
+
+model UserProfile {
+  id        String   @id @default(cuid())
+  userId    String   @unique @map("user_id")
+  programId String   @map("program_id")
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  program   Program  @relation(fields: [programId], references: [id])
+
+  @@map("user_profiles")
+}
+
+model Course {
+  /// Normalized course code, e.g. "CS40", "MATH51"
+  id        String   @id
+  subject   String
+  number    String
+  title     String?
+  credits   Int?
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  // relationships
+  userStatuses     UserCourseStatus[]
+  requirementLinks RequirementCourse[]
+
+  // prereq AST relationships
+  prereqExpression PrereqExpression?
+  prereqNodeLeaves PrereqNode[] @relation("CourseAsLeaf")
+
+  @@unique([subject, number])
+  @@map("courses")
+}
+
+enum CourseStatus {
+  COMPLETED
+  IN_PROGRESS
+  PLANNED
+
+  @@map("course_status")
+}
+
+model UserCourseStatus {
+  id        String       @id @default(cuid())
+  userId    String       @map("user_id")
+  courseId  String       @map("course_id")
+  status    CourseStatus
+  term      String?
+  note      String?
+
+  createdAt DateTime     @default(now()) @map("created_at")
+  updatedAt DateTime     @updatedAt @map("updated_at")
+
+  user      User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  course    Course       @relation(fields: [courseId], references: [id])
+
+  @@unique([userId, courseId])
+  @@index([userId, status])
+  @@map("user_course_statuses")
+}
+
+model RequirementGroup {
+  id          String   @id @default(cuid())
+  programId   String   @map("program_id")
+  name        String
+  minCount    Int?     @map("min_count")
+  minCredits  Int?     @map("min_credits")
+  description String?
+
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  program     Program  @relation(fields: [programId], references: [id], onDelete: Cascade)
+  courses     RequirementCourse[]
+
+  @@map("requirement_groups")
+}
+
+model RequirementCourse {
+  id                  String   @id @default(cuid())
+  requirementGroupId   String   @map("requirement_group_id")
+  courseId             String   @map("course_id")
+
+  createdAt            DateTime @default(now()) @map("created_at")
+  updatedAt            DateTime @updatedAt @map("updated_at")
+
+  requirementGroup     RequirementGroup @relation(fields: [requirementGroupId], references: [id], onDelete: Cascade)
+  course               Course            @relation(fields: [courseId], references: [id])
+
+  @@unique([requirementGroupId, courseId])
+  @@map("requirement_courses")
+}
+
+model PrereqExpression {
+  id         String   @id @default(cuid())
+  courseId   String   @unique @map("course_id")
+  rawText    String?  @db.Text @map("raw_text")
+  rootNodeId String   @unique @map("root_node_id")
+
+  createdAt  DateTime @default(now()) @map("created_at")
+  updatedAt  DateTime @updatedAt @map("updated_at")
+
+  // relations
+  course     Course     @relation(fields: [courseId], references: [id], onDelete: Cascade)
+
+  // NOTE: Prisma can represent this, but creating records usually needs a 2-step insert
+  // (create expression + nodes, then set rootNodeId).
+  rootNode   PrereqNode @relation("RootNode", fields: [rootNodeId], references: [id])
+
+  nodes      PrereqNode[] @relation("ExpressionNodes")
+
+  @@map("prereq_expressions")
+}
+
+enum PrereqNodeType {
+  AND
+  OR
+  MIN_K
+  COURSE
+  CONDITION
+}
+
+model PrereqNode {
+  id           String        @id @default(cuid())
+
+  expressionId String        @map("expression_id")
+  parentNodeId String?       @map("parent_node_id")
+  position     Int           @default(0)
+
+  nodeType     PrereqNodeType @map("node_type")
+  kValue       Int?          @map("k_value")
+
+  // leaf payloads
+  courseId      String?      @map("course_id")
+  conditionText String?      @db.Text @map("condition_text")
+
+  createdAt    DateTime      @default(now()) @map("created_at")
+  updatedAt    DateTime      @updatedAt @map("updated_at")
+
+  // relations
+  expression   PrereqExpression @relation("ExpressionNodes", fields: [expressionId], references: [id], onDelete: Cascade)
+
+  parent       PrereqNode?      @relation("NodeChildren", fields: [parentNodeId], references: [id], onDelete: Cascade)
+  children     PrereqNode[]     @relation("NodeChildren")
+
+  // when nodeType == COURSE, courseId points to Course.id
+  course       Course?          @relation("CourseAsLeaf", fields: [courseId], references: [id])
+
+  // root backref (optional, allows navigation from node -> expression(s) that declare it root)
+  rootFor      PrereqExpression? @relation("RootNode")
+
+  @@index([expressionId])
+  @@index([parentNodeId])
+  @@index([expressionId, parentNodeId])
+  @@map("prereq_nodes")
+}
