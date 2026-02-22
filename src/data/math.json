@@ -1,0 +1,32 @@
+{
+  "MATH 61": {
+    "subject": "MATH",
+    "title": "Discrete Mathematics",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "",
+    "attributes": "SoE-Mathematics\nBFA-Science/Technology\nLA-Distribution-Mathematics",
+    "description": "(Cross-listed as CS 61.)  Sets, relations and functions, logic and methods of proof, combinatorics, graphs and digraphs.\nRecommendations:  MATH 32 or COMP 11 or permission of instructor..",
+    "grading_basis": "Graded"
+  }, 
+  "MATH 70": {
+    "subject": "MATH",
+    "title": "Linear Algebra",
+    "units": "4.00",
+    "typically_offered": "Various Terms",
+    "requirements": "",
+    "attributes": "SOE – Pre-Registration Eligible\nSoE-Mathematics\nBFA-Science/Technology\nLA-Distribution-Mathematics",
+    "description": "Introduction to the theory of vector spaces and linear transformations over the real or complex numbers, including linear independence, dimension, matrix multiplication, similarity and change of basis, inner products, eigenvalues and eigenvectors, and some applications. Recommendations:  MATH 34 or 39 or permission of instructor.  Students may count only one of MATH 70 and MATH 72 for credit.",
+    "grading_basis": "Graded"
+  }, 
+  "MATH 65": {
+    "subject": "MATH",
+    "title": "Bridge to Higher Mathematics",
+    "units": "3.00",
+    "typically_offered": "All Terms",
+    "requirements": "",
+    "attributes": "SSOE – Pre-Registration Eligible\nSoE-Mathematics\nBFA-Science/Technology\nLA-Distribution-Mathematics",
+    "description": "Introduction to rigorous reasoning, applicable across all areas of mathematics, to prepare for proof-based courses at the 100 level. Writing proofs with precise reasoning and clear exposition required. Topics may include induction, functions and relations, combinatorics, modular arithmetic, graph theory, and convergence of sequences and series of real numbers.",
+    "grading_basis": "Graded"
+  }
+}
