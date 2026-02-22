@@ -41,10 +41,12 @@ export default async function DashboardPage() {
   // Parse degree.json into courses with user progress and eligibility
   const courses = parseDegreeToCourses(degreeData as DegreeData, completedIds);
 
+  const minTotalSHU = (degreeData as { minTotalSHU?: number }).minTotalSHU ?? 120;
+
   return (
     <div className="flex flex-col p-10 gap-5">
       <h1>Dashboard</h1>
-      <DashboardClient courses={courses} />
+      <DashboardClient courses={courses} minTotalSHU={minTotalSHU} />
     </div>
   );
 }

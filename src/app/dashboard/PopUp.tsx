@@ -1,11 +1,22 @@
 'use client';
 
 import React, { useEffect } from 'react';
-import Course from '@/types/Course';
+import Course from '../../types/Course';
+
+type ShuByCategory = { mns: number; hass: number; ce: number };
+
+type Props = {
+  open: boolean;
+  course: Course | null;
+  shuByCategory?: ShuByCategory;
+  onClose: () => void;
+  onToggleComplete?: (completed: boolean) => void;
+  onNotesChange?: (notes: string) => void;
+};
 
 function Chip({ children }: { children: React.ReactNode }) {
   return (
-    <span className="inline-flex items-center rounded-full border border-slate-300 bg-white px-3 py-1 text-sm text-slate-700">
+    <span className="inline-flex items-center rounded-full border border-slate-300 bg-white px-2 py-0.5 text-xs text-slate-700">
       {children}
     </span>
   );
@@ -22,10 +33,12 @@ function PillTag({ label }: { label: string }) {
       ? 'bg-amber-300 text-amber-900'
       : upper === 'C'
       ? 'bg-indigo-300 text-indigo-900'
+      : upper === 'E'
+      ? 'bg-sky-300 text-sky-900'
       : 'bg-slate-200 text-slate-700';
 
   return (
-    <span className={`inline-flex h-10 w-10 items-center justify-center rounded-full text-sm font-extrabold ${cls}`}>
+    <span className={`inline-flex h-8 w-8 items-center justify-center rounded-full text-xs font-extrabold ${cls}`}>
       {label}
     </span>
   );
@@ -34,26 +47,36 @@ function PillTag({ label }: { label: string }) {
 function SectionCard({
   title,
   children,
+  compact,
+  grow,
+  className = '',
 }: {
   title: string;
   children?: React.ReactNode;
+  compact?: boolean;
+  grow?: boolean;
+  className?: string;
 }) {
   return (
-    <div className="rounded-2xl border border-slate-300 bg-white p-5">
-      <div className="mb-3 text-xl font-extrabold text-slate-700">{title}</div>
-      <div className="min-h-[120px] text-slate-600">{children}</div>
+    <div className={`flex flex-col rounded-xl border border-slate-300 bg-white ${compact ? 'p-3' : 'p-5'} ${className}`}>
+      <div className={`shrink-0 font-extrabold text-slate-700 ${compact ? 'mb-1 text-sm' : 'mb-3 text-xl'}`}>{title}</div>
+      <div className={`text-slate-600 ${grow ? 'min-h-0 flex-1 flex flex-col' : ''}`}>{children}</div>
     </div>
   );
 }
 
+const CATEGORY_TOTALS = { mns: 34, hass: 24, ce: 55 };
+
 export default function CoursePopup({
   open,
   course,
+  shuByCategory = { mns: 0, hass: 0, ce: 0 },
   onClose,
   onToggleComplete,
   onNotesChange,
 }: Props) {
-  // ESC to close + lock scroll
+  const [notes, setNotes] = React.useState('');
+
   useEffect(() => {
     if (!open) return;
 
@@ -71,129 +94,134 @@ export default function CoursePopup({
     };
   }, [open, onClose]);
 
-  if (!open) return null;
+  if (!course) return null;
 
-  const {
-    id,
-    title,
-    term = 'Spring / Fall',
-    shu = 4,
-    grading = 'Letter Grade',
-    doubleCounting = false,
-    completed = false,
-    notes = '',
-    prerequisites = [],
-    recommended = [],
-    tags = [],
-    progress = { done: 0, total: 34 },
-  } = course;
+  const term = course.typically_offered ?? 'Spring / Fall';
+  const shu = course.units ?? 4;
+  const grading = course.letterGradeRequired ? 'Letter Grade' : 'Pass/Fail';
+  const doubleCounting = course.noDoubleCounting === false;
+  const tags = course.tags ?? [];
 
   return (
     <div className="fixed inset-0 z-50">
-      {/* Backdrop */}
+      {/* Backdrop - click to close */}
       <button
-        aria-label="Close popup"
-        className="absolute inset-0 cursor-default bg-black/40"
+        aria-label="Close panel"
+        className={`absolute inset-0 cursor-default bg-black/40 transition-opacity duration-300 ${
+          open ? 'opacity-100' : 'pointer-events-none opacity-0'
+        }`}
         onClick={onClose}
       />
 
-      {/* Modal */}
-      <div className="absolute inset-0 flex items-start justify-center p-4 sm:p-8">
-        <div className="relative w-full max-w-3xl overflow-hidden rounded-3xl bg-white shadow-2xl">
-          {/* top bar */}
-          <div className="relative px-6 pt-6">
-            {/* close X */}
-            <button
-              onClick={onClose}
-              className="absolute left-4 top-4 text-3xl leading-none text-slate-500 hover:text-slate-700"
-              aria-label="Close"
-            >
-              ×
-            </button>
+      {/* Slide-out panel from right - half screen width, no scroll */}
+      <div
+        className={`absolute right-0 top-0 bottom-0 z-10 flex h-screen w-1/2 min-w-[320px] flex-col overflow-hidden bg-white shadow-2xl transition-transform duration-300 ease-out ${
+          open ? 'translate-x-0' : 'translate-x-full'
+        }`}
+      >
+        {/* top bar */}
+        <div className="flex shrink-0 items-center justify-between border-b border-slate-200 px-4 py-3">
+          <button
+            onClick={onClose}
+            className="text-2xl leading-none text-slate-500 hover:text-slate-700"
+            aria-label="Close"
+          >
+            ×
+          </button>
 
-            {/* complete checkbox */}
-            <div className="flex items-center justify-end gap-3">
-              <span className="text-lg text-slate-600">Mark as Complete</span>
-              <input
-                type="checkbox"
-                checked={completed}
-                onChange={(e) => onToggleComplete?.(e.target.checked)}
-                className="h-6 w-6 accent-slate-700"
-                aria-label="Mark as Complete"
-              />
+          <div className="flex items-center gap-2">
+            <span className="text-sm text-slate-600">Mark as Complete</span>
+            <input
+              type="checkbox"
+              checked={course.started}
+              onChange={(e) => onToggleComplete?.(e.target.checked)}
+              className="h-6 w-6 accent-slate-700"
+              aria-label="Mark as Complete"
+            />
+          </div>
+        </div>
+
+        {/* content - flex to fit viewport */}
+        <div className="flex min-h-0 flex-1 flex-col overflow-hidden px-4 py-4">
+          {/* header - compact */}
+          <div className="shrink-0">
+            {course.id.startsWith('req-') ? (
+              <div className="text-2xl font-black tracking-wide text-slate-700">
+                {course.title}
+              </div>
+            ) : (
+              <>
+                <div className="text-2xl font-black tracking-wide text-slate-700">
+                  {course.id}
+                </div>
+                <div className="mt-1 text-base font-semibold text-slate-700">
+                  {course.title}
+                </div>
+              </>
+            )}
+
+            <div className="mt-2 flex flex-wrap gap-2">
+              <Chip>{term}</Chip>
+              <Chip>{shu} SHU</Chip>
+              <Chip>{grading}</Chip>
+              <Chip>{doubleCounting ? 'Double Counting' : 'NO Double Counting'}</Chip>
             </div>
           </div>
 
-          {/* content */}
-          <div className="px-6 pb-6 pt-2 sm:px-10 sm:pb-10">
-            {/* header */}
-            <div className="mt-4">
-              <div className="text-5xl font-black tracking-wide text-slate-700">
-                {id}
+          {/* sections - stacked vertically, Notes expands to fill space */}
+          <div className="mt-4 flex min-h-0 flex-1 flex-col gap-3">
+            <SectionCard title="Prerequisites" compact>
+              {course.prereq_raw ? (
+                <p className="text-sm">{course.prereq_raw}</p>
+              ) : (
+                <div className="text-sm text-slate-400">—</div>
+              )}
+            </SectionCard>
+
+            <SectionCard title="Notes" compact grow className="min-h-0 flex-1">
+              <textarea
+                value={notes}
+                onChange={(e) => {
+                  setNotes(e.target.value);
+                  onNotesChange?.(e.target.value);
+                }}
+                placeholder="Write notes here…"
+                className="min-h-24 flex-1 w-full resize-none rounded-lg border border-slate-200 p-2 text-sm text-slate-700 outline-none focus:ring-2 focus:ring-slate-300"
+              />
+            </SectionCard>
+
+            <SectionCard title="Recommended" compact>
+              <div className="text-sm text-slate-400">—</div>
+            </SectionCard>
+          </div>
+
+          {/* footer - only show SHU for categories relevant to this course */}
+          <div className="mt-4 flex shrink-0 flex-col gap-2">
+            {tags.some((t) => String(t) === 'M' || String(t) === 'NS') && (
+              <div className="flex items-center justify-between text-sm font-semibold text-slate-900">
+                <span>M + NS</span>
+                <span>{shuByCategory.mns}/{CATEGORY_TOTALS.mns} SHU</span>
               </div>
-              <div className="mt-2 text-2xl font-semibold text-slate-700">
-                {title}
+            )}
+            {tags.some((t) => String(t) === 'HASS') && (
+              <div className="flex items-center justify-between text-sm font-semibold text-slate-900">
+                <span>HASS</span>
+                <span>{shuByCategory.hass}/{CATEGORY_TOTALS.hass} SHU</span>
               </div>
-
-              <div className="mt-4 flex flex-wrap gap-3">
-                <Chip>{term}</Chip>
-                <Chip>{shu} SHU</Chip>
-                <Chip>{grading}</Chip>
-                <Chip>{doubleCounting ? 'Double Counting' : 'NO Double Counting'}</Chip>
+            )}
+            {tags.some((t) => String(t) === 'C' || String(t) === 'E') && (
+              <div className="flex items-center justify-between text-sm font-semibold text-slate-900">
+                <span>C + E</span>
+                <span>{shuByCategory.ce}/{CATEGORY_TOTALS.ce} SHU</span>
               </div>
-            </div>
-
-            {/* sections */}
-            <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2">
-              <SectionCard title="Prerequisites">
-                {prerequisites.length ? (
-                  <ul className="list-disc pl-5">
-                    {prerequisites.map((p) => (
-                      <li key={p}>{p}</li>
-                    ))}
-                  </ul>
-                ) : (
-                  <div className="text-slate-400">—</div>
-                )}
-              </SectionCard>
-
-              <SectionCard title="Notes">
-                <textarea
-                  value={notes}
-                  onChange={(e) => onNotesChange?.(e.target.value)}
-                  placeholder="Write notes here…"
-                  className="h-28 w-full resize-none rounded-xl border border-slate-200 p-3 text-slate-700 outline-none focus:ring-2 focus:ring-slate-300"
-                />
-              </SectionCard>
-
-              <SectionCard title="Recommended">
-                {recommended.length ? (
-                  <ul className="list-disc pl-5">
-                    {recommended.map((r) => (
-                      <li key={r}>{r}</li>
-                    ))}
-                  </ul>
-                ) : (
-                  <div className="text-slate-400">—</div>
-                )}
-              </SectionCard>
-
-              {/* blank card to mirror layout */}
-              <div className="rounded-2xl border border-transparent bg-transparent" />
-            </div>
-
-            {/* footer */}
-            <div className="mt-10 flex items-center justify-end gap-4">
-              <div className="text-3xl font-semibold text-slate-900">
-                {progress.done}/{progress.total} SHU
-              </div>
-
-              <div className="flex items-center gap-3">
-                {tags.map((t) => (
-                  <PillTag key={t} label={t} />
+            )}
+            {tags.length > 0 && (
+              <div className="mt-2 flex flex-wrap gap-2">
+                {tags.map((tag) => (
+                  <PillTag key={tag} label={String(tag)} />
                 ))}
               </div>
-            </div>
+            )}
           </div>
         </div>
       </div>
