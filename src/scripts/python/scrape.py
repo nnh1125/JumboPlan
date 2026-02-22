@@ -1,6 +1,5 @@
 import asyncio
-from os import name
-from pdfplumber import page
+import re
 import json
 from playwright.async_api import async_playwright
 
@@ -82,7 +81,7 @@ async def main():
         }
 
         # Iterate through rows and click on each course 
-        for i in range(1, 3):  # skip header row
+        for i in range(1, count):  # skip header row, process all courses
             nested = False
             course_row = rows.nth(i)
             course_link = course_row.locator("td").nth(0).locator("a")
@@ -91,47 +90,51 @@ async def main():
             await course_link.click()
             await page.wait_for_timeout(3000)  # wait for details to load
 
-            # Extract frame
-            inner_frame = page.frame_locator('[name^="ptModFrame_"]')
+            # Wait for modal frame to appear
+            await page.wait_for_selector('[name^="ptModFrame_"]', timeout=15000)
+            await page.wait_for_timeout(2000)  # extra wait for modal content to load
 
-            # check if need to click another session 
-            if await inner_frame.locator("#DERIVED_CRSECAT_DESCR200").count() > 0:
-                # directly assign course Id
-                course_id = await inner_frame.locator("#DERIVED_CRSECAT_DESCR200").inner_text()
+            # Extract frame - use last one (most recent modal) when multiple modals exist
+            inner_frame = page.frame_locator('iframe[name^="ptModFrame_"] >> nth=-1')
+
+            # Check if course ID is already visible (single session) or need to click a campus link
+            course_id_locator = inner_frame.locator("#DERIVED_CRSECAT_DESCR200")
+            if await course_id_locator.count() > 0:
+                course_id_text = (await course_id_locator.inner_text()).strip()
+                if course_id_text:
+                    # directly assign course Id
+                    course_id = course_id_text
+                else:
+                    nested = True
+                    # need to click session - try flexible link match
+                    campus_link = inner_frame.get_by_role("link").filter(has_text=re.compile(r"Medford|Somerville", re.I)).first
+                    await campus_link.click(timeout=15000)
+                    await page.wait_for_timeout(3000)
+                    course_id = await inner_frame.locator("#DERIVED_CRSECAT_DESCR200").inner_text()
             else:
                 nested = True
-                # click on session to get course id
-                await inner_frame.get_by_role("link", name="Medford/Somerville Campus").click()
+                # click on session to get course id - try flexible link match
+                campus_link = inner_frame.get_by_role("link").filter(has_text=re.compile(r"Medford|Somerville", re.I)).first
+                await campus_link.click(timeout=15000)
                 await page.wait_for_timeout(3000)
                 course_id = await inner_frame.locator("#DERIVED_CRSECAT_DESCR200").inner_text()
 
             id, subject, title = parse_course(course_id)
             print(f"Course ID: {course_id}")
 
-            # extract units
-            units = await inner_frame.locator("#DERIVED_CRSECAT_UNITS_RANGE\\$0").inner_text()
+            async def safe_text(locator):
+                """Get inner_text if element exists, else empty string."""
+                if await locator.count() > 0:
+                    return (await locator.inner_text()).strip()
+                return ""
 
-            # extract typically offered
-            typically_offered = await inner_frame.locator("#DERIVED_CRSECAT_SSR_TYP_OFFERED\\$0").inner_text()
-
-            # extract requirements
-            requirements = await inner_frame.locator('#DERIVED_CRSECAT_DESCR254A\\$0').inner_text()
-            
-            # extract attribute (safe: no timeout if missing)
-            attribute_locator = inner_frame.locator(
-                "#DERIVED_CRSECAT_SSR_CRSE_ATTR_LONG\\$0"
-            )
-
-            if await attribute_locator.count() > 0:
-                attributes = (await attribute_locator.inner_text()).strip()
-            else:
-                attributes = ""
-
-            # grading_basis
-            grading_basis = await inner_frame.locator("#SSR_CRSE_OFF_VW_GRADING_BASIS\\$0").inner_text()
-
-            # extract description
-            description = await inner_frame.locator("#SSR_CRSE_OFF_VW_DESCRLONG\\$0").inner_text()
+            # extract fields (some may be missing for certain courses)
+            units = await safe_text(inner_frame.locator("#DERIVED_CRSECAT_UNITS_RANGE\\$0"))
+            typically_offered = await safe_text(inner_frame.locator("#DERIVED_CRSECAT_SSR_TYP_OFFERED\\$0"))
+            requirements = await safe_text(inner_frame.locator("#DERIVED_CRSECAT_DESCR254A\\$0"))
+            attributes = await safe_text(inner_frame.locator("#DERIVED_CRSECAT_SSR_CRSE_ATTR_LONG\\$0"))
+            grading_basis = await safe_text(inner_frame.locator("#SSR_CRSE_OFF_VW_GRADING_BASIS\\$0"))
+            description = await safe_text(inner_frame.locator("#SSR_CRSE_OFF_VW_DESCRLONG\\$0"))
 
             print(f"Units: {units}")
             print(f"Typically Offered: {typically_offered}")
@@ -155,13 +158,28 @@ async def main():
             }
 
             # close details and go back to course list
-            if nested:
-                await inner_frame.get_by_role("link", name="Medford/Somerville Campus").click()
-                await inner_frame.get_by_role("link", name="Medford/Somerville Campus").click()
-                nested = False
-            else:
-                print("Closing course details")
-                await inner_frame.get_by_role("link", name="Medford/Somerville Campus").click()
+            # Multi-offering: "Return to Select Course Offering" -> offering list, then "Return to Browse Catalog" -> catalog
+            # Single offering: "Return to Browse Catalog" (or similar) -> catalog
+            back_pattern = re.compile(
+                r"return to select course offering|return to .* catalog|browse catalog|course catalog|Medford|Somerville",
+                re.I
+            )
+            try:
+                # First click: from course detail to offering list (multi) or to catalog (single)
+                back_link = inner_frame.get_by_role("link").filter(has_text=back_pattern).first
+                await back_link.click(timeout=15000)
+                await page.wait_for_timeout(1500)
+                # Second click: from offering list to catalog (only needed for multi-offering)
+                inner_frame = page.frame_locator('iframe[name^="ptModFrame_"] >> nth=-1')
+                back_link = inner_frame.get_by_role("link").filter(has_text=back_pattern).first
+                await back_link.click(timeout=8000)
+            except Exception:
+                # Fallback: use JS click (bypasses visibility) or Escape key
+                close_btn = page.locator('#ptpopupclose').last
+                if await close_btn.count() > 0:
+                    await close_btn.evaluate("el => el.click()")
+                else:
+                    await page.keyboard.press("Escape")
             await page.wait_for_timeout(2000)
 
 

@@ -5,6 +5,7 @@
 
 import Course from "../types/Course";
 import CourseTag from "../types/CourseTag";
+import { evaluatePrereqNode, hasCoursePrereqs } from "./prereqEval";
 
 // Degree JSON types (from degree.json structure)
 type DegreeGroup = {
@@ -101,7 +102,31 @@ const ELECTIVE_YEAR: Record<string, number> = {
   "Unrestricted Elective": 4,
 };
 
-// Prerequisite order for locked/eligible: courses with lower index are prerequisites
+// Curriculum prereqs: course -> required course IDs (OR: any one satisfies). BSCS core sequence.
+const CURRICULUM_PREREQS: Record<string, string[]> = {
+  "CS15": ["CS11", "CS10"],
+  "CS40": ["CS15"],
+  "CS160": ["CS15", "CS40"],
+  "CS105": ["CS15"],
+  "CS80": ["CS15"],
+};
+
+function isCurriculumPrereqSatisfied(code: string, completedIds: Set<string>): boolean {
+  const prereqs = CURRICULUM_PREREQS[code];
+  if (!prereqs) return true;
+  return prereqs.some((p) => {
+    const pNorm = p.replace(/\s/g, "");
+    if (completedIds.has(pNorm)) return true;
+    const m = pNorm.match(/^([A-Za-z\/]+)(\d+)$/i);
+    if (m) {
+      const [, subj, num] = m;
+      return completedIds.has(`${subj}${num.padStart(4, "0")}`) || completedIds.has(`${subj}${parseInt(num, 10)}`);
+    }
+    return false;
+  });
+}
+
+// Prerequisite order for locked/eligible (fallback when no curriculum prereq defined)
 const PREREQ_ORDER: string[] = [
   "MATH 32",
   "MATH 39",
@@ -211,9 +236,38 @@ function parseCourseId(id: string): { subject: string; number: string } {
   return { subject: id, number: "" };
 }
 
+export type PrereqMap = Map<string, import("./prereqEval").PrereqNodeData | null>;
+
+/** Extract all concrete course IDs from degree (for prereq lookup). Excludes elective slots (req-X). */
+export function getDegreeCourseIds(degree: DegreeData): string[] {
+  const ids = new Set<string>();
+  let idx = 0;
+  for (const group of degree.groups) {
+    for (const item of group.items) {
+      const count = item.type === "elective_set" ? item.data.count : item.type === "elective_rule" && item.data.count ? item.data.count : 1;
+      for (let i = 0; i < count; i++) {
+        const baseId = getCourseId(item, idx);
+        if (!baseId.startsWith("req-")) {
+          const norm = baseId.replace(/\s/g, "");
+          ids.add(norm);
+          if (norm.includes("-")) ids.add(norm.split("-")[0]);
+          if (item.type === "course_or" && item.data.options) {
+            for (const opt of item.data.options) {
+              if ("course" in opt && opt.course) ids.add(opt.course.replace(/\s/g, ""));
+            }
+          }
+        }
+        idx++;
+      }
+    }
+  }
+  return [...ids];
+}
+
 export function parseDegreeToCourses(
   degree: DegreeData,
-  completedCourseIds?: Set<string>
+  completedCourseIds?: Set<string>,
+  prereqMap?: PrereqMap
 ): Course[] {
   const courses: Course[] = [];
   let globalIndex = 0;
@@ -257,18 +311,43 @@ export function parseDegreeToCourses(
     });
   }
 
-  // Compute eligibility based on prerequisite order
+  // Compute eligibility: use prereqMap (DB) when available, else fallback to PREREQ_ORDER
   const completedIds = completedCourseIds ?? new Set<string>();
   for (const c of courses) {
     if (c.started) completedIds.add(c.id.replace(/\s/g, ""));
   }
   for (const c of courses) {
-    if (!c.started) {
-      const code = c.id.replace(/\s/g, "");
-      const prereqIndex = PREREQ_ORDER.findIndex((p) => p.replace(/\s/g, "") === code);
+    if (c.started) continue;
+    const code = c.id.replace(/\s/g, "");
+    const baseCode = code.includes("-") ? code.split("-")[0] : code;
+    const prereqRoot = prereqMap?.get(code) ?? prereqMap?.get(baseCode);
+    if (CURRICULUM_PREREQS[baseCode]) {
+      c.eligible = isCurriculumPrereqSatisfied(baseCode, completedIds);
+    } else if (prereqRoot !== undefined && prereqRoot !== null && hasCoursePrereqs(prereqRoot)) {
+      c.eligible = evaluatePrereqNode(prereqRoot, completedIds);
+    } else if (prereqRoot !== undefined && prereqRoot !== null && !hasCoursePrereqs(prereqRoot)) {
+      const prereqIndex = PREREQ_ORDER.findIndex((p) => p.replace(/\s/g, "") === code || p.replace(/\s/g, "") === baseCode);
       if (prereqIndex > 0) {
         const prev = PREREQ_ORDER[prereqIndex - 1].replace(/\s/g, "");
         c.eligible = completedIds.has(prev);
+      } else {
+        c.eligible = true;
+      }
+    } else {
+      if (prereqMap) {
+        const prereqIndex = PREREQ_ORDER.findIndex((p) => p.replace(/\s/g, "") === code || p.replace(/\s/g, "") === baseCode);
+        if (prereqIndex > 0) {
+          const prev = PREREQ_ORDER[prereqIndex - 1].replace(/\s/g, "");
+          c.eligible = completedIds.has(prev);
+        } else {
+          c.eligible = true;
+        }
+      } else {
+        const prereqIndex = PREREQ_ORDER.findIndex((p) => p.replace(/\s/g, "") === code);
+        if (prereqIndex > 0) {
+          const prev = PREREQ_ORDER[prereqIndex - 1].replace(/\s/g, "");
+          c.eligible = completedIds.has(prev);
+        }
       }
     }
   }

@@ -1,9 +1,9 @@
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/prisma";
 import { getAuthId } from "@/lib/auth";
-import Course from "@/types/Course";
 import DashboardClient from "./DashBoardClient";
-import { parseDegreeToCourses, type DegreeData } from "@/lib/degreeParser";
+import { parseDegreeToCourses, getDegreeCourseIds, type DegreeData } from "@/lib/degreeParser";
+import { getPrereqMapForCourses } from "@/lib/prereqService";
 import degreeData from "@/data/degree.json";
 
 export default async function DashboardPage() {
@@ -23,23 +23,25 @@ export default async function DashboardPage() {
     redirect("/onboarding");
   }
 
-  // Demo: completed course IDs to match design (TODO: load from user progress/DB)
-  const completedIds = new Set([
-    "MATH32",
-    "EN1",
-    "ENG1",
-    "ENG3",
-    "CS11",
-    "MATH34",
-    "MATH42",
-    "CS15",
-    "CS/MATH61",
-    "EM52",
-    "MATH70",
-  ]);
+  const statusRows = await prisma.userCourseStatus.findMany({
+    where: { userId: user.id, status: "COMPLETED" },
+    select: { courseId: true },
+  });
+  const completedIds = new Set<string>();
+  for (const r of statusRows) {
+    completedIds.add(r.courseId);
+    const m = r.courseId.match(/^([A-Za-z\/]+)(\d+)$/i);
+    if (m) {
+      const [, subj, num] = m;
+      completedIds.add(`${subj}${parseInt(num, 10)}`);
+      completedIds.add(`${subj}${num.padStart(4, "0")}`);
+    }
+  }
 
-  // Parse degree.json into courses with user progress and eligibility
-  const courses = parseDegreeToCourses(degreeData as DegreeData, completedIds);
+  const degreeCourseIds = getDegreeCourseIds(degreeData as DegreeData);
+  const prereqMap = await getPrereqMapForCourses(degreeCourseIds);
+
+  const courses = parseDegreeToCourses(degreeData as DegreeData, completedIds, prereqMap);
 
   const minTotalSHU = (degreeData as { minTotalSHU?: number }).minTotalSHU ?? 120;
 

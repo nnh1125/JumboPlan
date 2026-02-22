@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { auth } from "@clerk/nextjs/server";
 import { prisma } from "@/lib/prisma";
 import { CourseStatus } from "@prisma/client";
+import { resolveCourseId } from "@/lib/prereqService";
 
 type PutBody = {
   courseId: string;               // "CS40"
@@ -71,28 +72,26 @@ export async function PUT(req: Request) {
     create: { authId: userId },
   });
 
-  // If NOT_STARTED => delete row (since your enum doesn't store it)
+  const resolvedId = (await resolveCourseId(courseId)) ?? courseId;
+
   if (isNotStarted) {
     await prisma.userCourseStatus.deleteMany({
-      where: { userId: user.id, courseId },
+      where: { userId: user.id, courseId: resolvedId },
     });
     return NextResponse.json({ ok: true, deleted: true });
   }
 
-  // Optional: validate course exists in DB (recommended if you're storing courses there)
   const courseExists = await prisma.course.findUnique({
-    where: { id: courseId },
+    where: { id: resolvedId },
     select: { id: true },
   });
   if (!courseExists) {
     return NextResponse.json({ error: `Unknown courseId: ${courseId}` }, { status: 404 });
   }
 
-  // Upsert progress row
   const row = await prisma.userCourseStatus.upsert({
     where: {
-      // because @@unique([userId, courseId]) => Prisma generates this compound unique input
-      userId_courseId: { userId: user.id, courseId },
+      userId_courseId: { userId: user.id, courseId: resolvedId },
     },
     update: {
       status: status as CourseStatus,
@@ -101,7 +100,7 @@ export async function PUT(req: Request) {
     },
     create: {
       userId: user.id,
-      courseId,
+      courseId: resolvedId,
       status: status as CourseStatus,
       term: term ?? null,
       note: note ?? null,

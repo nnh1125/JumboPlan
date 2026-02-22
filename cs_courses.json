@@ -16,5 +16,1385 @@
     "attributes": "",
     "description": "An optional preparatory course for students with no prior programming experience\nand limited experience in college-level STEM classes. Basics of programming\nincluding variables, control flow, subroutines, and problem solving in a hands-on,\ncollaborative environment. The class will meet over the latter half of the semester,\nand prepare students to enter CS11 with prior exposure to topics that CS 11\ndiscusses in depth. Pass/fail grading.\nRecommendations: high school algebra.",
     "grading_basis": "Pass/Not Pass"
+  },
+  "CS 0004": {
+    "subject": "CS",
+    "title": "Teaching Computer Science",
+    "units": "1.00",
+    "typically_offered": "Various Terms",
+    "requirements": "",
+    "attributes": "",
+    "description": "Mechanics of teaching, reviewing, and evaluating computer science coursework. Constructive question answering, grading with consistency, and creating an inclusive and welcoming environment. Enrolled students must be undergraduate teaching assistants for Computer Science classes.",
+    "grading_basis": "Pass/Not Pass"
+  },
+  "CS 0005": {
+    "subject": "CS",
+    "title": "Special Topics for non-majors",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "",
+    "attributes": "",
+    "description": "Content and prerequisites to be announced. Please see department website for specific details.",
+    "grading_basis": "Graded"
+  },
+  "CS 0007": {
+    "subject": "CS",
+    "title": "Bioinfomatics",
+    "units": "4.00",
+    "typically_offered": "Fall Term",
+    "requirements": "",
+    "attributes": "BFA-Science/Technology\nLA-Distribution-Mathematics",
+    "description": "(Cross-listed with BIO 0040) Bioinformatics for students with little or no computer science background. Basic programming skills for data manipulation and analysis. Methods and applications of online tools for sequence alignment, molecular phylogeny, gene expression data analysis, and linking molecular variation to disease.\u00a0\nRecommendations:Biology 41 or BME 62 or equivalent.",
+    "grading_basis": "Graded"
+  },
+  "CS 0008": {
+    "subject": "CS",
+    "title": "Preparing for Career Success",
+    "units": "2.00",
+    "typically_offered": "Various Terms",
+    "requirements": "CS (SOE or A & S) or DS majors",
+    "attributes": "",
+    "description": "Career preparation for Computer Science students in the technology industry. Strategic thinking about opportunities, skills assessment and marketing, resume preparation, interview and practice, presentation skills, and career networking.",
+    "grading_basis": "Graded"
+  },
+  "CS 0009": {
+    "subject": "CS",
+    "title": "Various Topics In Computer Science",
+    "units": "2.00",
+    "typically_offered": "Various Terms",
+    "requirements": "",
+    "attributes": "BFA-Science/Technology\nLA-Distribution-Mathematics",
+    "description": "Please see departmental website for detailed information.\nRecommendations:\u00a0 A sincere interest in learning more about computer science and no prior programming experience.",
+    "grading_basis": "Graded"
+  },
+  "CS 0010": {
+    "subject": "CS",
+    "title": "Programming Fundamentals",
+    "units": "4.00",
+    "typically_offered": "Various Terms",
+    "requirements": "First Years and Sophomores or CBS Majors",
+    "attributes": "SOE-Computing\nBFA-Science/Technology\nLA-Distribution-Mathematics",
+    "description": "Fundamental concepts of computer science and computer programming for students with no prior programming experience but who are interested in taking CS11. Data structures and algorithms, text and data manipulation, simulation using random numbers. Students cannot receive credit for CS 10 subsequent to earning a grade of C- or better in CS 11 or CS 15.\u00a0 Students may receive credit for either CS10 or ES2, but not both. Recommendation: high school algebra",
+    "grading_basis": "Graded"
+  },
+  "CS 0011": {
+    "subject": "CS",
+    "title": "Introduction To Computer Science",
+    "units": "4.00",
+    "typically_offered": "All Terms",
+    "requirements": "(Prior completion of CS 10 OR ES 2) AND (SOE undergraduate OR First or second year student in A&S OR CS Postbac OR Major or Minor in Computer Science or Cognitive and Brain Science in A&S).",
+    "attributes": "SOE-Computing\nBFA-Science/Technology\nLA-Distribution-Mathematics",
+    "description": "The study of computer science centers on two complementary aspects of the discipline. First, computer science is fundamentally concerned with the problem-solving methodologies it derives from its foundational fields: the design principles of engineering, mathematical theory, and scientific empirical study. Second, these methodologies are applied in the complex context of a modern day computing system. In this course we will address both of these important aspects. As a means for developing your design skills, we will discuss the fundamental features of a high level, general purpose programming language \u2014 namely C++ \u2014 and learn how to use it as a tool for problem solving. We will also consider the performance of solutions, and how to apply both analytical and empirical assessment techniques. Finally, we will explore the Unix operating system as a context for problem solving. Students who have completed CS 15 with a C- or better cannot subsequently earn credit for CS11.",
+    "grading_basis": "Graded"
+  },
+  "CS 0012": {
+    "subject": "CS",
+    "title": "Cyber for Future Policymakers",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "",
+    "attributes": "",
+    "description": "Relevance of computer technologies to policy development. Internet architecture and basic networking, the Web, cloud architectures, cryptography, security and privacy, AI and machine learning, and open-source systems. Developing technologies, including quantum computing and post-quantum cryptography. Recommendations: CS 10 or CS 11.",
+    "grading_basis": "Graded"
+  },
+  "CS 0013": {
+    "subject": "CS",
+    "title": "How Systems Work",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "",
+    "attributes": "",
+    "description": "How computing systems work: bits, bytes, the representation of information, the CPU, assembly language, programming languages. Networking: including peering, packets, and the Internet. Algorithms and the fundamental limitations of computing. Recommendations: CS 10 or CS 11.",
+    "grading_basis": "Graded"
+  },
+  "CS 0014": {
+    "subject": "CS",
+    "title": "Emerging Scholars in Computer Science",
+    "units": "1.00",
+    "typically_offered": "Fall Term and Spring Term",
+    "requirements": "First Years or Sophomores",
+    "attributes": "",
+    "description": "Weekly, peer-led workshops exploring topics in computer science. Emphasis on the collaborative and problem-solving nature of computer science. No prior programming experience is necessary. Students must apply to enroll \u2013 see departmental website for details.\nPrerequisite: first year or sophomore standing",
+    "grading_basis": "Pass/Not Pass"
+  },
+  "CS 0015": {
+    "subject": "CS",
+    "title": "Data Structures",
+    "units": "4.00",
+    "typically_offered": "All Terms",
+    "requirements": "Open to online CS or DS postbac, OR online CS or DS MS students",
+    "attributes": "SOE-Computing\nBFA-Science/Technology\nLA-Distribution-Mathematics",
+    "description": "A second course in computer science. Data structures and algorithms are studied through major programming projects. Topics include linked lists, trees, graphs, dynamic storage allocation, and recursion.\n\nEnrollment priority given to freshmen or sophomores; computer science majors or minors; or majors or minors that list CS15 as a requirement or elective.",
+    "grading_basis": "Graded"
+  },
+  "CS 0020": {
+    "subject": "CS",
+    "title": "Web Programming",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "Completion of CS 11 or CS 15 or CS postbacs",
+    "attributes": "SOE-Computing\nBFA-Science/Technology\nLA-Distribution-Mathematics",
+    "description": "An introduction to techniques, principles, and practices of writing computer programs for the World Wide Web. Server and browser capabilities and limits. Media types, handlers, and limitations. Web programming languages and techniques. Web security, privacy, and commerce. Lectures augmented with programming projects illustrating concepts and current practice. Students may receive credit for either CS20 or CS120, but not both.",
+    "grading_basis": "Graded"
+  },
+  "CS 0021": {
+    "subject": "CS",
+    "title": "Concurrent Programming",
+    "units": "3.00",
+    "typically_offered": "Fall Term",
+    "requirements": "Completion of CS 15 or CS Postbacs",
+    "attributes": "SOE-Computing",
+    "description": "Shared memory concurrency including threads, locks, mutexes,\nsemaphores, Deadlock, livelock, shared mutable state. Native concurrency including communicating processes, message send/receive, synchronous and asynchronous communication, isolated mutable state. Team project using students' choice of paradigm and topic. Recommendations: Two programming courses past CS 15.",
+    "grading_basis": "Graded"
+  },
+  "CS 0023": {
+    "subject": "CS",
+    "title": "Game Design",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "",
+    "attributes": "SOE-Computing\nBFA-Science/Technology\nLA-Distribution-Mathematics",
+    "description": "Processes, procedures, methodologies, and principles of game design. Managing teamwork, project scope and user experience. Paper and digital prototyping, including the use of software for programming, art, and audio production. Recommendations: CS 15",
+    "grading_basis": "Graded"
+  },
+  "CS 0027": {
+    "subject": "CS",
+    "title": "How Systems Fail",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "(CS 13 or CS 15) and (restricted undergraduates in their first or second year)",
+    "attributes": "SOE-Computing",
+    "description": "Failure of computer systems within the larger context of complex systems, including the power grid and aviation. Failures of algorithms and protocols, engineering and implementation, systems and applications, people and culture. Attacks, attack recovery, security, privacy, and attribution. Case studies of failures and attacks, including distributed denial of service, Meltdown, Spectre, and spear-phishing attacks.",
+    "grading_basis": "Graded"
+  },
+  "CS 0028": {
+    "subject": "CS",
+    "title": "Cyber-Security and Cyber-Warfare",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "Completion of CS 11 or PS 61",
+    "attributes": "SOE-Computing",
+    "description": "(Cross-listed as PS 164) An interdisciplinary analysis of cybersecurity and cyberwar in the United States and other countries. Policymaking and intelligence aspects of cybersecurity and political science and the technical constraints of computer networks and software. Exploit methods including packet analysis, password cracking, social engineering, reconnaissance, and malware analysis. State-backed and non-state actors engaged in cyber-espionage, counterintelligence, deterrence, and offensive cyber-operations. Prerequisites: Political Science 61 or Computer Science 11.",
+    "grading_basis": "Graded"
+  },
+  "CS 0030": {
+    "subject": "CS",
+    "title": "Programming for Data Science",
+    "units": "4.00",
+    "typically_offered": "Various Terms",
+    "requirements": "Completion of CS 15 or CS Postbacs",
+    "attributes": "SOE-Computing",
+    "description": "Fundamentals of programming for data-intensive science. Data structures and algorithms for data manipulation, cleaning, and preparation. Design of data manipulation programs. Coding standards and practices. Use and creation of software libraries. Techniques for improving program performance. Examples drawn from data preparation and transformation, statistical data analysis, machine learning, deep learning, and deep data science including recommendation systems and trend analysis.",
+    "grading_basis": "Graded"
+  },
+  "CS 0031": {
+    "subject": "CS",
+    "title": "Foundations for Artificial Intelligence",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "(CS 10 or ES 2) & (MATH/CS 61 OR one of: MATH 21, 32, 34, 65, or 70)",
+    "attributes": "SOE-Computing",
+    "description": "Foundations of artificial intelligence (AI) from both a programming and mathematical perspective, with a focus on practical applications across a number of disciplines and domains. Techniques and applications of graph search, including heuristic search. Optimization via linear programming, satisfiability solvers, and constraint satisfaction solvers. Basics of probability theory and game theory as used in AI systems. Agent-based systems, including multiagent systems, Markov methods, and reinforcement learning. Human factors including trustworthiness and accountability.",
+    "grading_basis": "Graded"
+  },
+  "CS 0035": {
+    "subject": "CS",
+    "title": "Foundations for Machine Learning",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "(CS 10 or ES 2) & (MATH/CS 61 OR one of: MATH 21, 32, 34, 65, or 70)",
+    "attributes": "SOE-Computing",
+    "description": "Mathematical and programming fundamentals of machine learning (ML), with examples from various applications. Regression analysis techniques and classification approaches. Mathematics of gradient methods and considerations when modeling data using probability distributions including (but not limited to) Normal distributions. Deep learning methods using neural network models, including modern transformer techniques. Working with the full ML pipeline: the handling of varying data types; model building and model validation; and the analysis of model results. Social and ethical issues associated with system explainability, fairness in ML, and data privacy concerns.",
+    "grading_basis": "Graded"
+  },
+  "CS 0039": {
+    "subject": "CS",
+    "title": "Ethics for AI, Robotics, and Human Robot Interaction",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "Senior standing in Computer Science, Data Science, or Cognitive and Brain Science. No Graduate Enrollment.",
+    "attributes": "SoE-Engineering",
+    "description": "Ethical problems and challenges prompted by current and future technological advances in AI, robotics, and human-robot interaction. Philosophical foundations of the main ethical theories and links between these and algorithmic approaches in artificial agents. Functional tradeoffs and implications for autonomous robots and AI systems, explicating and contrasting the assumptions underlying each algorithmic approach. Moral psychology and human-robot/human-technology interaction, including the societal implications of AI and robot technology. Social, economic, legal, and military ramifications. No graduate enrollment. Graduate students may take CS 239 instead.",
+    "grading_basis": "Graded"
+  },
+  "CS 0040": {
+    "subject": "CS",
+    "title": "Machine Structure & Assembly-language Programming",
+    "units": "5.00",
+    "typically_offered": "Various Terms",
+    "requirements": "Completion of CS 15 with C- or better",
+    "attributes": "SOE-Computing\nBFA-Science/Technology\nLA-Distribution-Mathematics",
+    "description": "Structure of machine-level data and code, including memory, cache, registers, machine arithmetic, and bitwise operations. Encapsulating machine functionality through interfaces and abstract data types. Structure of assembly code, relocatable object code, and binary machine code, and the translations between them. Applications of machine-level operations and code translations in programming projects.\nHigh demand (see \"course notes\" for signup procedure).",
+    "grading_basis": "Graded"
+  },
+  "CS 0045": {
+    "subject": "CS",
+    "title": "Computer Organization",
+    "units": "4.00",
+    "typically_offered": "",
+    "requirements": "ES 4",
+    "attributes": "SOE \u2013 Pre-Registration Eligible",
+    "description": "(Cross-listed w/ EE 25) Computer organization including performance measurement, instruction set architectures, digital arithmetic, processor datapath, control, pipelining, memory hierarchy, caches and input/output.\nPrerequisite: ES 4",
+    "grading_basis": "Graded"
+  },
+  "CS 0050": {
+    "subject": "CS",
+    "title": "Special Topics",
+    "units": "3.00",
+    "typically_offered": "Spring Term",
+    "requirements": "",
+    "attributes": "SOE-Computing\nBFA-Science/Technology",
+    "description": "Content and prerequisites to be announced. Please see departmental website for specific details.",
+    "grading_basis": "Graded"
+  },
+  "CS 0051": {
+    "subject": "CS",
+    "title": "Special Topics in Data Infrastructure and Systems",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "",
+    "attributes": "SOE-Computing",
+    "description": "A special topics course in data infrastructures and systems, suitable for fulfilling requirements of the Bachelor of Science in Data Science.",
+    "grading_basis": "Graded"
+  },
+  "CS 0052": {
+    "subject": "CS",
+    "title": "Special Topics in Data Analysis and Interfaces",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "",
+    "attributes": "SOE-Computing",
+    "description": "A special topics course in data analysis and interfaces, suitable for fulfilling requirements of the Bachelor of Science in Data Science.",
+    "grading_basis": "Graded"
+  },
+  "CS 0053": {
+    "subject": "CS",
+    "title": "Special Topics in Computational and Theoretical Aspects of Data Science",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "",
+    "attributes": "SOE-Computing",
+    "description": "A special topics course in computational and theoretical aspects of data science, suitable for fulfilling requirements of the Bachelor of Science in Computer Science or Bachelor of Science in Data Science. Refer to the Class Notes for the description and prerequisites (if any) for each specific section of this course.",
+    "grading_basis": "Graded"
+  },
+  "CS 0055": {
+    "subject": "CS",
+    "title": "Special Topics in Social Context of Computing",
+    "units": "2.00 - 3.00",
+    "typically_offered": "",
+    "requirements": "",
+    "attributes": "",
+    "description": "Study of various topics in the social and ethical context of computing. Content and prerequisites to be announced. Please see departmental website for specific details.",
+    "grading_basis": "Graded"
+  },
+  "CS 0061": {
+    "subject": "CS",
+    "title": "Discrete Mathematics",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "",
+    "attributes": "SoE-Mathematics\nBFA-Science/Technology\nLA-Distribution-Mathematics",
+    "description": "(Cross-listed as MATH 61).\u00a0 Sets, relations and functions, logic and methods of proof, combinatorics, graphs and digraphs.\nRecommendations:\u00a0 MATH 32 or COMP 11 or permission of instructor.",
+    "grading_basis": "Graded"
+  },
+  "CS 0062": {
+    "subject": "CS",
+    "title": "Discrete Math Skills Workshop",
+    "units": "1.00",
+    "typically_offered": "Various Terms",
+    "requirements": "Enrollment in CS 61",
+    "attributes": "",
+    "description": "Small group, active learning workshop that provides students additional learning resources related to CS 61.",
+    "grading_basis": "Pass/Not Pass"
+  },
+  "CS 0080": {
+    "subject": "CS",
+    "title": "Programming Languages",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "Requires the completion of CS 15 or graduate standing.",
+    "attributes": "SOE-Computing",
+    "description": "An overview of language design and implementation, plus programming techniques for particular types of languages. Compilers and interpreters, binding, scope rules, formal semantic models, structure hiding, object-oriented programming, functional programming, and logic programming. Examples and problems from among Pascal, Algol, C++, Java, Scheme, Lisp, Prolog, and others. CS 80 and CS 105 cannot both be taken for credit. Prerequisite: CS 15.",
+    "grading_basis": "Graded"
+  },
+  "CS 0086": {
+    "subject": "CS",
+    "title": "Object-oriented Programming For Graphical User Interfaces",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "Completion of CS 15 or CS Postbacs",
+    "attributes": "SOE-Computing\nBFA-Science/Technology\nLA-Distribution-Mathematics",
+    "description": "Object-oriented programming and design, including oject-oriented encapsulation, inheritance, and subtype polymorphism.\u00a0 Foundational concepts of graphical user interfaces, including events, callbacks, and widgets.\u00a0 Connections between objects and user interfaces, e.g., interface widgets as objects.\u00a0 Design and programming projects.",
+    "grading_basis": "Graded"
+  },
+  "CS 0093": {
+    "subject": "CS",
+    "title": "Directed Study",
+    "units": "0.00 - 3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "",
+    "attributes": "SOE-Computing",
+    "description": "Guided study of an approved topic. Please see departmental website for specific details.",
+    "grading_basis": "Graded"
+  },
+  "CS 0094": {
+    "subject": "CS",
+    "title": "Directed Study",
+    "units": "0.00 - 3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "",
+    "attributes": "SOE-Computing",
+    "description": "Guided study of an approved topic. Please see departmental website for specific details.",
+    "grading_basis": "Graded"
+  },
+  "CS 0097": {
+    "subject": "CS",
+    "title": "Senior Capstone Project I",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "Seniors",
+    "attributes": "SOE \u2013 Pre-Registration Eligible\nSOE-Computing",
+    "description": "Requirements analysis and design of a senior capstone project. Requirements analysis and elicitation methods, and prototyping. Design principles and methods, including designing for usability, security, testability, performance, and scaling. Project management and planning, including cost and effort estimation. Writing effective documentation.\nRecommendations:\u00a0 CS 40 and Senior Standing.",
+    "grading_basis": "Graded"
+  },
+  "CS 0098": {
+    "subject": "CS",
+    "title": "Senior Capstone Project II",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "CS 97",
+    "attributes": "SOE \u2013 Pre-Registration Eligible\nSOE-Computing",
+    "description": "Implementation and testing of the project designed in CS 97. Implementation tools, strategies, and platforms. Testing and debugging methodologies. Maintenance and release management. Legal, ethical, and social impacts of computing. Students must have taken CS 97 the previous semester and be continuing the same project.",
+    "grading_basis": "Graded"
+  },
+  "CS 0099": {
+    "subject": "CS",
+    "title": "Internship Computer Science",
+    "units": "1.00",
+    "typically_offered": "Various Terms",
+    "requirements": "",
+    "attributes": "",
+    "description": "Study of approved topics in Computer Science in concert with an internship in computing or a related field. Prerequisites: Permission of instructor.",
+    "grading_basis": "Pass/Not Pass"
+  },
+  "CS 0100": {
+    "subject": "CS",
+    "title": "Disc Grp/do Not Register",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "",
+    "attributes": "",
+    "description": "",
+    "grading_basis": "Graded"
+  },
+  "CS 0105": {
+    "subject": "CS",
+    "title": "Programming Languages",
+    "units": "4.00",
+    "typically_offered": "Various Terms",
+    "requirements": "Restricted to CS Majors, CS Minors, and CS Graduate Students. Undergraduates must have grades of C- or better in (CS15 and one of the following courses: CS 61, Math 61, or Math 65).",
+    "attributes": "SOE-Computing\nBFA-Science/Technology\nLA-Distribution-Mathematics",
+    "description": "Principles and application of computer programming languages.\u00a0 Emphasizes ideas and techniques most relevant to practitioners, but includes foundations crucial for intellectual rigor: abstract syntax, lambda calculus, type systems, dynamic semantics.\u00a0 Case studies, reinforced by programming exercises.\u00a0 Grounding sufficient to read professional literature.\u00a0 CS 80 and CS 105 cannot both be taken for credit.",
+    "grading_basis": "Graded"
+  },
+  "CS 0106": {
+    "subject": "CS",
+    "title": "Virtual Machines and Language Translation",
+    "units": "4.00",
+    "typically_offered": "Various Terms",
+    "requirements": "Prior completion of CS 40 and CS 105",
+    "attributes": "SOE-Computing",
+    "description": "Translation of high-level, functional programming languages to virtual-machine code. Design and implementation of register-based virtual machines and instruction sets. Bytecode interpretation. Function calls including optimized tail calls. Virtual assembly language, virtual object code, and code loading. Automated memory management (garbage collection). Functional-programming techniques for translation. Composition of translation passes using an error monad. Parsing and unparsing. Parsing combinators. Translation of higher-order functions via closure conversion. Naive register allocation by reduction to K-normal form. Code generation from K-normal form to virtual assembly language. Lightweight benchmarking.",
+    "grading_basis": "Graded"
+  },
+  "CS 0107": {
+    "subject": "CS",
+    "title": "Compilers",
+    "units": "4.00",
+    "typically_offered": "Fall Term",
+    "requirements": "Prior completion of CS 40 and CS 105 or graduate standing",
+    "attributes": "SOE-Computing\nBFA-Science/Technology\nLA-Distribution-Mathematics",
+    "description": "Translation and implementation of programming languages. Parsing, code generation, and optimization. Compiler design projects for simple block-structured programming languages are used to illustrate the concepts and methods.",
+    "grading_basis": "Graded"
+  },
+  "CS 0110": {
+    "subject": "CS",
+    "title": "Debugging Cloud Computing",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "",
+    "attributes": "SOE-Computing",
+    "description": "Examination of the causes of problems in cloud datacenters. Read, analyze, and conduct research on tools and techniques to diagnose cloud problems, using domain knowledge, machine learning, and statistics. Includes an introduction to cloud computing and distributed systems.\nRecommended: One of CS 111, CS 112, CS 117, or CS 118",
+    "grading_basis": "Graded"
+  },
+  "CS 0111": {
+    "subject": "CS",
+    "title": "Operating Systems",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "CS 15 and CS 40 or EE25",
+    "attributes": "SOE-Computing\nBFA-Science/Technology\nLA-Distribution-Mathematics",
+    "description": "(Cross-listed as EE 128). Fundamental issues in operating system design. Concurrent processes: synchronization, sharing, deadlock, scheduling. Relevant hardware properties of uniprocessor and multiprocessor computer systems.",
+    "grading_basis": "Graded"
+  },
+  "CS 0112": {
+    "subject": "CS",
+    "title": "Networks",
+    "units": "3.00",
+    "typically_offered": "Fall Term",
+    "requirements": "Completion of CS 15 and either CS 40 or EE 14, or Graduate Standing",
+    "attributes": "SOE-Computing\nBFA-Science/Technology\nLA-Distribution-Mathematics",
+    "description": "Computer Networks and Protocols. Design and implementation of computer communication networks, protocols, and applications, with an emphasis on the Internet protocol suite. Network architectures and programming interfaces. Data link, transport, and routing protocols. Congestion sources and remedies. Addressing and naming in local area and wide area networks. Network security and network management.",
+    "grading_basis": "Graded"
+  },
+  "CS 0113": {
+    "subject": "CS",
+    "title": "Human Factors in Security and Privacy",
+    "units": "3.00",
+    "typically_offered": "Fall Term",
+    "requirements": "(CS 10 or CS 11 or ES 2) or graduate standing",
+    "attributes": "SOE-Computing",
+    "description": "Usability and human-computer interaction (HCI) problems of privacy and security. Common HCI methods that can be used to measure usability issues in security and privacy mechanisms. Practical experience understanding and designing studies which evaluate usability issues in security and privacy systems. Course instruction assumes students are familiar with introductory concepts in programing.",
+    "grading_basis": "Graded"
+  },
+  "CS 0114": {
+    "subject": "CS",
+    "title": "Network Security",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "Requires the completion of CS 15 or graduate standing.",
+    "attributes": "SOE-Computing",
+    "description": "Vulnerabilities, attacks, and mitigations at all layers of the network\nstack. Public and private key cryptography, confidentiality and\nauthentication protocols, botnets, firewalls, intrusion detection\nsystems, and communication privacy and anonymity.\nRecommendations: CS 40.",
+    "grading_basis": "Graded"
+  },
+  "CS 0115": {
+    "subject": "CS",
+    "title": "Database Systems",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "CS 15 or Graduate Standing",
+    "attributes": "SOE-Computing\nBFA-Science/Technology\nLA-Distribution-Mathematics",
+    "description": "Fundamental concepts of database systems, including conceptual design, relational and object-oriented data models, query languages (SQL, QBE), and implementation issues (indexing, transaction processing, concurrent control). The concepts and algorithms covered encompass many of those used in commercial and experimental database systems. Other topics include distributed databases and distributed query processing.\nRecommendations:\u00a0 CS 40",
+    "grading_basis": "Graded"
+  },
+  "CS 0116": {
+    "subject": "CS",
+    "title": "Introduction to Security",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "Requires the completion of CS 15 or graduate standing.",
+    "attributes": "SOE-Computing\nBFA-Science/Technology\nLA-Distribution-Mathematics",
+    "description": "A holistic and broad perspective on cyber security. Attacking and defending networks, cryptography, vulnerabilities, reverse engineering, web security, static and dynamic analysis, malware, forensics. Principles illustrated through hands-on labs and projects, including Capture The Flag (CTF) games.",
+    "grading_basis": "Graded"
+  },
+  "CS 0117": {
+    "subject": "CS",
+    "title": "Internet-scale Distributed Systems",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "CS 40 or permission of the instructor",
+    "attributes": "SOE-Computing",
+    "description": "Principles and practices in designing large-scale distributed software systems on the Internet and beyond, including core principles of the design of the World-Wide Web. Key issues and fundamental principles are explored, e.g. global uniform naming, location independence, Metcalfe's law and network effects, function placement and the End-to-End principle, extensibility and evolution of distributed systems including Postel\u2019s law, leaky abstractions, etc. Comparison with more traditional distributed system designs, e.g. distributed objects, client/server, publish/subscribe, reliable queuing, and remote procedure calls.",
+    "grading_basis": "Graded"
+  },
+  "CS 0118": {
+    "subject": "CS",
+    "title": "Cloud Computing",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "Completion of CS 40 or Graduate Standing",
+    "attributes": "SOE-Computing",
+    "description": "Cloud computing fundamentals, including cloud architecture, scalability, elasticity, and metrics of cloud performance including service-level objectives (SLOs) and service-level agreements (SLAs). Cloud programming models and abstractions including Map/Reduce. Persistent storage mechanisms, including key/value stores and cold storage. Geo-distributed cloud systems. Cloud networking, including data center architecture, software defined networking, and middleboxes. Cloud security.",
+    "grading_basis": "Graded"
+  },
+  "CS 0119": {
+    "subject": "CS",
+    "title": "Big Data",
+    "units": "4.00",
+    "typically_offered": "Various Terms",
+    "requirements": "CS 15 and (MATH 70 or MATH 72), or graduate standing",
+    "attributes": "SOE-Computing",
+    "description": "Collecting, processing, analyzing and acting on data at Internet scale with speed and complexity. Techniques and infrastructures developed for big data including parallel and distributed database systems, map-reduce infrastructures, scalable platforms for complex data types, stream processing systems, and cloud-based computing. Course blends theory, algorithms and practical (hands on) work.",
+    "grading_basis": "Graded"
+  },
+  "CS 0120": {
+    "subject": "CS",
+    "title": "Web Programming and Engineering",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "Requires the completion of CS 15 or graduate standing.",
+    "attributes": "SOE-Computing\nBFA-Science/Technology\nLA-Distribution-Mathematics",
+    "description": "Web applications as complex systems that deliver functionality to a large number of users, and exhibit unique behaviors and demands in terms of performance, scalability, usability, and security. How the web works, limitations of client-side and server-side technologies including frameworks and APIs, content optimization, and data persistence and storage. Projects will involve search, using the cloud infrastructure, location-based services, mobile web development, and using tools to assess the security and privacy of web applications.\nStudents may receive credit for either CS20 or CS120, but not both.",
+    "grading_basis": "Graded"
+  },
+  "CS 0121": {
+    "subject": "CS",
+    "title": "Software Engineering",
+    "units": "3.00",
+    "typically_offered": "Fall Term",
+    "requirements": "Requires the completion of CS 15 or graduate standing.",
+    "attributes": "SOE-Computing\nBFA-Science/Technology\nLA-Distribution-Mathematics",
+    "description": "Core principles and ideas that enable development of large-scale software systems, with a focus on programming. Abstraction, modularity, design patterns, specification, testing, verification, and debugging.",
+    "grading_basis": "Graded"
+  },
+  "CS 0122": {
+    "subject": "CS",
+    "title": "Parallel Computing",
+    "units": "3.00",
+    "typically_offered": "Spring Term",
+    "requirements": "",
+    "attributes": "SoE-Engineering",
+    "description": "(Cross-listed as EE 155) Programming modern parallel computer architectures, especially GPUs and multi-core CPUs. Rationale for modern multi-core CPUs. Challenges of multi-threaded programming. High-performance software taking advantage of hardware caches, cache coherency, memory systems and parallel computation. Recommendations: EE 25 or CS 40.",
+    "grading_basis": "Graded"
+  },
+  "CS 0123": {
+    "subject": "CS",
+    "title": "Software Performance Engineering",
+    "units": "4.00",
+    "typically_offered": "Various Terms",
+    "requirements": "CS 15 and CS 40 or EE 25, or graduate standing",
+    "attributes": "SOE-Computing",
+    "description": "Achieving optimal performance from modern computing platforms. Performance analysis, data representation, bit manipulation and vectorization, assembly language, task-parallel programming, work/span analysis, compiler optimization, cache-oblivious algorithms, race conditions and synchronization, nondeterministic programming, and scalable system development.",
+    "grading_basis": "Graded"
+  },
+  "CS 0124": {
+    "subject": "CS",
+    "title": "Privacy, Security, and Data",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "Completion of CS 115 or graduate standing",
+    "attributes": "SOE-Computing",
+    "description": "Designing systems that provide useful results while still respecting user privacy. State of the art techniques in privacy-preserving data science, differential privacy, secure multi-party computation. Reading research papers, giving presentations, completing a final project using real-world data.",
+    "grading_basis": "Graded"
+  },
+  "CS 0125": {
+    "subject": "CS",
+    "title": "Numerical Analysis",
+    "units": "4.00",
+    "typically_offered": "Spring Term",
+    "requirements": "",
+    "attributes": "SOE-Computing\nBFA-Science/Technology\nLA-Distribution-Mathematics",
+    "description": "(Cross-listed as MATH 125.) Analysis of algorithms involving computation with real numbers. Interpolation, methods for solving linear and nonlinear systems of equations, numerical integration, methods for ordinary differential equations.\nRecommendations:\u00a0 MATH 51 and programming ability in a language such as C, C++, Fortran, Pascal, or Matlab.",
+    "grading_basis": "Graded"
+  },
+  "CS 0126": {
+    "subject": "CS",
+    "title": "Numerical Linear Algebra",
+    "units": "4.00",
+    "typically_offered": "Various Terms",
+    "requirements": "",
+    "attributes": "SOE-Computing\nBFA-Science/Technology\nLA-Distribution-Mathematics",
+    "description": "(Cross-listed as MATH 126.) The two basic computational problems of linear algebra: solution of linear systems and computation of eigenvalues and eigenvectors.\nRecommendations:\u00a0 MATH 70 or 72 and CS 11.",
+    "grading_basis": "Graded"
+  },
+  "CS 0128": {
+    "subject": "CS",
+    "title": "Machine Learning via Sequential Interaction",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "MATH 0070 and (EE 0024 or EE 0104 or MATH 0165) or graduate student",
+    "attributes": "SOE \u2013 Pre-Registration Eligible\nSoE-Engineering",
+    "description": "(Cross-listed as EE 140) Introduction of machine learning as a sequential and interactive game technically referred to as 'online learning'. In online learning, the learner aims to minimize the regret: loss incurred for not playing the best strategy (in hindsight) averaged over time. This framework generalizes the traditional statistical learning set-up in a non-trivial manner to cases where the examples are not independent, are supplied only sequentially, and possibly in an adversarial manner. Topics include: general set-up of sequential learning with examples, online convex and online linear optimization, online-to-batch conversion, multi-armed bandits, contextual bandits, practical algorithms and their analysis with provable guarantees. Connections with and extensions to reinforcement learning will be highlighted. Prior programming experience is recommended.",
+    "grading_basis": "Graded"
+  },
+  "CS 0129": {
+    "subject": "CS",
+    "title": "Computing for Developing Regions",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "",
+    "attributes": "SOE-Computing",
+    "description": "An interdisciplinary approach to the role of computing technologies in developing regions. Low-cost communication infrastructure; socially relevant technologies for education, healthcare, and governance; and the use of technology by underserved communities and populations in developing regions. Problems and existing solutions covered through case studies. Group projects on designing, implementing, and evaluating a solution.\nRecommendations: CS10 or CS11 or some background in computer science and/or technology.",
+    "grading_basis": "Graded"
+  },
+  "CS 0130": {
+    "subject": "CS",
+    "title": "Optimization in Deep Learning",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "MATH 0042 and MATH 0070 and one of (EE 0024, EE 0104, or MATH 0165),\u00a0 or graduate standing",
+    "attributes": "SOE \u2013 Pre-Registration Eligible\nSoE-Engineering",
+    "description": "(Cross-listed as EE 110) Key optimization techniques in deep learning. Topics include gradient descent, stochastic gradient descent, momentums, initialization, learning rate adaptation, normalizations, regularization, activations, second-order methods, and meta-learning. Application in deep learning tasks via mini-projects.",
+    "grading_basis": "Graded"
+  },
+  "CS 0131": {
+    "subject": "CS",
+    "title": "Artificial Intelligence",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "CS 15 and (CS/Math 61 or Math 65) or Grad Standing",
+    "attributes": "SOE-Computing\nBFA-Science/Technology\nLA-Distribution-Mathematics",
+    "description": "History, theory, and computational methods of artificial intelligence. Basic concepts include representation of knowledge and computational methods for reasoning. One or two application areas will be studied, to be selected from expert systems, robotics, computer vision, natural language understanding, and planning.",
+    "grading_basis": "Graded"
+  },
+  "CS 0132": {
+    "subject": "CS",
+    "title": "Computer Vision",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "Completion of CS 15, Math 32, Math 70 and one of (Math 166 or ES 56 or EE 24) or graduate standing",
+    "attributes": "SOE-Computing",
+    "description": "Introduction to low and intermediate levels of classic and modern Computer Vision. How to design algorithms that process visual scenes to automatically extract information. Fundamental principles and important applications of computer vision, including image formation, processing, detection and matching features, image segmentation, and multiple views. Basics of machine learning and deep learning for computer vision.\nRecommendations: CS 160 and Math 165",
+    "grading_basis": "Graded"
+  },
+  "CS 0133": {
+    "subject": "CS",
+    "title": "Human-Robot Interaction",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "Prior completion of CS 15 andn senior standing, or graduate standing",
+    "attributes": "SOE-Computing",
+    "description": "Human-robot interaction (HRI) at the intersection of psychology, human factors engineering, computer science, and robotics. Case studies of developing robots for various societal tasks, from flexible and adaptive robots for industrial manufacturing, to socially assistive robots for elder care. Discussion of key papers in HRI. Short student presentations on HRI studies and designs; work in interdisciplinary groups on a term project to design and conduct an HRI study.\nRecommendations: At least one course beyond Math 34, including Math 42, 44, 61, 70, or 72",
+    "grading_basis": "Graded"
+  },
+  "CS 0134": {
+    "subject": "CS",
+    "title": "Computational Models in Cognitive Science",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "",
+    "attributes": "SOE-Computing",
+    "description": "(Cross-listed w/ PSY 141) Scientific logic of using computational models for testing theories in cognitive science. Connectionist and Bayesian models; agent-based simulation. Emphasis upon using models in combination with empirical data to test theories. Appropriate use and critical evaluation of computational modeling as found in scientific publications. Recommendations:CS 10, 11, or equivalent programming experience in any computer language. An introductory course in statistics.",
+    "grading_basis": "Graded"
+  },
+  "CS 0135": {
+    "subject": "CS",
+    "title": "Introduction To Machine Learning And Data Mining",
+    "units": "3.00",
+    "typically_offered": "Fall Term",
+    "requirements": "CS 15 and (CS/Math 61 or Math 65) or Grad Standing",
+    "attributes": "SOE-Computing\nBFA-Science/Technology\nLA-Distribution-Mathematics",
+    "description": "An overview of methods whereby computers can learn from data or experience and make decisions accordingly. Topics include supervised learning, unsupervised learning, reinforcement learning, and knowledge extraction from large databases with applications to science, engineering, and medicine.\nRecommendations: CS 160 is highly recommended.",
+    "grading_basis": "Graded"
+  },
+  "CS 0136": {
+    "subject": "CS",
+    "title": "Statistical Pattern Recognition",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "Graduate standing OR Major in (Data Science OR Computer Science) in SOE OR Major in (Computer Science) in A&S",
+    "attributes": "SOE-Computing",
+    "description": "Statistical foundations and algorithms for machine learning with a focus on Bayesian modeling.\u00a0 Topics include: classification and regression problems, regularization, model selection, kernel methods, support vector machines, Gaussian processes, graphical models.\nRecommendations:\u00a0 MATH 70 or 72, EE 104 or MATH 165, and CS 40 or CS 105, or graduate standing",
+    "grading_basis": "Graded"
+  },
+  "CS 0137": {
+    "subject": "CS",
+    "title": "Deep Neural Networks",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "",
+    "attributes": "SOE-Computing",
+    "description": "Deep neural networks and their applications including computer vision and natural language processing. Feed-forward, convolutional, and recurrent neural networks. Techniques for training deep neural networks, including optimization, regularization, and usage of related software. Recommendations: CS 135, MATH 42, and MATH 70.",
+    "grading_basis": "Graded"
+  },
+  "CS 0138": {
+    "subject": "CS",
+    "title": "Reinforcement Learning",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "CS 15 and (CS/Math 61 or Math 65) or Grad Standing",
+    "attributes": "SOE-Computing",
+    "description": "Agents that learn, plan, and act in complex, uncertain environments. Varying topics that may include practical successes and challenges of reinforcement learning; common software libraries and packages used to implement and test reinforcement learning algorithms, and advanced topics such as transfer learning and deep reinforcement learning. Recommendations: CS 131 and/or CS 135. Proficiency in one of C++, Java, or Python.",
+    "grading_basis": "Graded"
+  },
+  "CS 0140": {
+    "subject": "CS",
+    "title": "Advanced Topics In Computer Architecture",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "",
+    "attributes": "New Course This Semester\nSoE-Engineering\nBFA-Science/Technology\nLA-Distribution-Mathematics",
+    "description": "(Cross-listed w/ EE 156) Modern computer architecture, starting from basic 5-stage pipelines and progressing to out-of-order superscalar processors, multicore processors, and heterogeneous processors. Techniques to maximize single-thread performance within the constraints of memory technology, power consumption, and the inherent\ninstruction-level parallelism of applications. Current and future challenges faced by\ncomputer architects and computer-system designers. Discussion of research papers.\nRecommendation: EE126/COMP146 or COMP40",
+    "grading_basis": "Graded"
+  },
+  "CS 0141": {
+    "subject": "CS",
+    "title": "Probabilistic Robotics for Human-Robot Interaction",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "Math 70 or 72 and one of ES 56, EE 24, or EE 104; or graduate standing",
+    "attributes": "SOE-Computing",
+    "description": "Techniques for probabilistic state estimation and their application to problems such as robot localization, mapping, perception, and planning in the context of Human-Robot Interaction. Machine learning and computer vision techniques commonly used by robots interacting with humans.\nRecommendations: Proficiency in C/C++ or Python",
+    "grading_basis": "Graded"
+  },
+  "CS 0142": {
+    "subject": "CS",
+    "title": "Network Science",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "CS 15 and (CS/Math 61 or Math 65) or Grad Standing",
+    "attributes": "",
+    "description": "Methods for analyzing massive graphs and networks that arise from social networks and biological networks. Scalable methods for classification, clustering, centrality, and inference on real-world example datasets. Specialized methods for social networks including link prediction, spread of influence, and emergent communities. Page rank in networks of web pages.\u00a0 Term project to identify a network science problem and test solutions on a real-world dataset.\u00a0\nRecommendations:\u00a0 MATH 70 or 72 or CS 135 or 160.",
+    "grading_basis": "Graded"
+  },
+  "CS 0143": {
+    "subject": "CS",
+    "title": "Distributed Machine Learning and Control",
+    "units": "3.00",
+    "typically_offered": "Spring Term",
+    "requirements": "(MATH 51, MATH 70, CS 11, and (EE 24, MATH 165 or ES 56)), OR Graduate Standing",
+    "attributes": "SoE-Engineering",
+    "description": "(Cross-listed as EE 130) Design and analysis of distributed machine learning and stochastic optimization methods from the perspective of dynamical systems that comes from signal processing and control theory. Topics include: state-space models, state transformations, canonical forms, graph theory, fixed-point theorems, Perron Frobenius theorem, contraction maps, convex and nonconvex functions, stochastic optimization, first and second order methods, accelerated first order methods including heavy-ball and Nesterov momentum, and variance reduction techniques. Python-based programming for machine learning tasks using real datasets including deep learning problems.\nPre-requisites: MATH 51, MATH 70, COMP11, and (EE24, MATH165 or ES56) or graduate standing\nRecommended: EE 105",
+    "grading_basis": "Graded"
+  },
+  "CS 0144": {
+    "subject": "CS",
+    "title": "Iterative Mthd Machine Learng",
+    "units": "3.00",
+    "typically_offered": "Spring Term",
+    "requirements": "",
+    "attributes": "SoE-Engineering",
+    "description": "(Cross-listed as EE 143) Design and analysis of modern machine learning methods with emphasis on convex and nonconvex problems, and centralized, federated, and distributed computational architectures. Topics include convergence, complexities, contractions, fixed point theorems, and perturbation techniques; gradient descent and stochastic gradient descent in addition to accelerated methods including Polyak and Nesterov momentum, minibatching, and variance reduction. State of the practice methods will be covered including Adagrad, Autogard, Adam, sgdm with applications in image classification and document clustering.\nRecommendations: MATH 70 and CS 11",
+    "grading_basis": "Graded"
+  },
+  "CS 0145": {
+    "subject": "CS",
+    "title": "Bayesian Deep Learning",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "CS 135 or CS 136",
+    "attributes": "SOE-Computing",
+    "description": "Modern deep learning methods (scalable gradient-based training of flexible neural networks for regression and classification) and modern Bayesian statistical methods. Estimating probabilities and making decisions under uncertainty, using these methods. Modeling innovations (e.g., models for functions and deep generative models), learning paradigms (e.g. MCMC and variational inference), and probabilistic programming platforms (e.g., JAX, PyTorch, Tensorflow, PyMC3). Coding exercises, student-led discussion of recent literature, and a long-term self-designed research project. Designing, implementing, and evaluating new contributions in this exciting research space.",
+    "grading_basis": "Graded"
+  },
+  "CS 0146": {
+    "subject": "CS",
+    "title": "Computer Architecture",
+    "units": "3.00",
+    "typically_offered": "Fall Term",
+    "requirements": "",
+    "attributes": "",
+    "description": "(Cross-listed w/ EE 126) Modern computer architecture, starting from caches and memory systems, basic 5-stage pipelines and progressing to out-of-order superscalar processors, multicore processors, and heterogeneous processors. Techniques to maximize single-thread performance within the constraints of memory technology, power consumption, and the inherent instruction-level parallelism of applications.\nRecommendations: an undergraduate computer organization class such as EE25 or CS40",
+    "grading_basis": "Graded"
+  },
+  "CS 0147": {
+    "subject": "CS",
+    "title": "Digital Design Verification",
+    "units": "3.00",
+    "typically_offered": "Spring Term",
+    "requirements": "Completion of EE 25 or EE 126 or graduate standing",
+    "attributes": "SoE-Engineering",
+    "description": "(Cross-listed as EE 165) Verification of digital hardware designs at the Register-Transfer Level (RTL) using System Verilog. Types of verification: formal vs. simulation-based; random vs. targeted; full-chip vs. unit-level; pre-silicon vs. post-silicon. Standardized frameworks: Universal Verification Methodology (UVM). Assertion-based checking, equivalence checking.\nPrerequisites: EE 25 or EE 126 or graduate standing.",
+    "grading_basis": "Graded"
+  },
+  "CS 0149": {
+    "subject": "CS",
+    "title": "Information Theory",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "",
+    "attributes": "SoE-Engineering",
+    "description": "(Cross-listed as EE 127).\u00a0 Information theory as a systematic framework to address fundamental laws and limits of data compression and digital communication.\u00a0 Source coding/data compression; information measures on discrete memory-less sources; practical schemes and algorithms for lossless data compression such as Huffman coding, arithmetic coding, Lempel-Ziv Coding; channel coding for reliable communication and rate distortion for lossy source compression. Advanced topics such as information theoretic cryptography.\u00a0\u00a0 Recommendations:\u00a0 EE 104 or permission of instructor.",
+    "grading_basis": "Graded"
+  },
+  "CS 0150": {
+    "subject": "CS",
+    "title": "Special Topics",
+    "units": "3.00",
+    "typically_offered": "All Terms",
+    "requirements": "",
+    "attributes": "SOE-Computing\nBFA-Science/Technology\nLA-Distribution-Mathematics",
+    "description": "Content and prerequisites to be announced. Over the past three years, special topics courses have been offered in parallel computing, graph drawing, computational geometry, multimedia data compression, cryptography and security, digital network communication, spoken language systems, system and network administration, and machine learning. Please see departmental website for specific details.",
+    "grading_basis": "Graded"
+  },
+  "CS 0151": {
+    "subject": "CS",
+    "title": "Special Topics in Data Infrastructure and Systems",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "",
+    "attributes": "SOE-Computing",
+    "description": "A special topics course in data infrastructures and systems, suitable for fulfilling requirements of the Bachelor of Science in Data Science.",
+    "grading_basis": "Graded"
+  },
+  "CS 0152": {
+    "subject": "CS",
+    "title": "Special Topics in Data Analysis and Interfaces",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "",
+    "attributes": "SOE-Computing",
+    "description": "A special topics course in data analysis and interfaces, suitable for fulfilling requirements of the Bachelor of Science in Data Science.",
+    "grading_basis": "Graded"
+  },
+  "CS 0153": {
+    "subject": "CS",
+    "title": "Special Topics in Computational and Theoretical Aspects of Data Science",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "",
+    "attributes": "SOE-Computing",
+    "description": "A special topics course in computational and theoretical aspects of data science, suitable for fulfilling requirements of the Bachelor of Science in Computer Science or Bachelor of Science in Data Science. Refer to the Class Notes for the description and prerequisites (if any) for each specific section of this course.",
+    "grading_basis": "Graded"
+  },
+  "CS 0155": {
+    "subject": "CS",
+    "title": "Special Topics in Social Context of Computing",
+    "units": "2.00 - 3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "",
+    "attributes": "",
+    "description": "ABET CAC requires us to include more social context in our curriculum, and this course provides a vehicle for such interaction, by allowing us to cross-list specific courses in A&S and Fletcher as satisfying that requirement via this number. Thus, this number can be used to change the description of the BSCS to include social context courses as required by ABET.\u00a0 We desire both undergraduate-only and undergraduate/graduate numbers for this option, depending upon course level.",
+    "grading_basis": "Graded"
+  },
+  "CS 0156": {
+    "subject": "CS",
+    "title": "Special Topics in the Practice of Software Development",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "",
+    "attributes": "SOE-Computing",
+    "description": "Special topics in the practice of software development. Please see departmental website for specific details and prerequisites.",
+    "grading_basis": "Graded"
+  },
+  "CS 0160": {
+    "subject": "CS",
+    "title": "Algorithms",
+    "units": "4.00",
+    "typically_offered": "Various Terms",
+    "requirements": "Requires prior completion of CS 15 with a grade of C- or better and a one of (CS 61, Math 61, or Math 65) with a C- or better, or graduate standing. First years and sophomores must have completed CS 15 and Math 61/CS 61/Math 65 for a B+ or better.",
+    "attributes": "SOE-Computing\nBFA-Science/Technology\nLA-Distribution-Mathematics",
+    "description": "Introduction to the study of algorithms. Strategies such as divide-and-conquer, greedy methods, and dynamic programming. Graph algorithms, sorting, searching, integer arithmetic, hashing, and NP-complete problems.\nHigh demand (see \"course notes\" for signup procedure).",
+    "grading_basis": "Graded"
+  },
+  "CS 0162": {
+    "subject": "CS",
+    "title": "Quantum Computer Science",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "Math 34 and Math 70 and one of (CS 61 or Math 61 or Math 65) or graduate standing",
+    "attributes": "SOE-Computing",
+    "description": "Elementary-level introduction to the computer science foundations of quantum computing. Hilbert spaces, quantum entanglement, quantum measurements, quantum circuits, quantum protocols and algorithms, Hamiltonians and the ground state problem, and quantum error-correcting codes. Open to students from different areas of engineering and sciences, such as computer science, physics, electrical engineering, mathematics, or chemistry. Focus on the theoretical foundations of quantum computing; mathematical enthusiasm is required.\n\nRecommended: CS 160 or CS 170",
+    "grading_basis": "Graded"
+  },
+  "CS 0163": {
+    "subject": "CS",
+    "title": "Computational Geometry",
+    "units": "3.00",
+    "typically_offered": "Fall Term",
+    "requirements": "",
+    "attributes": "SOE-Computing\nBFA-Science/Technology\nLA-Distribution-Mathematics",
+    "description": "(Cross-listed as MATH 181.) Design and analysis of algorithms for geometric problems. Topics include proof of lower bounds, convex hulls, searching and point location, plane sweep and arrangements of lines, Voronoi diagrams, intersection problems, decomposition and partitioning, farthest-pairs and closest-pairs, rectilinear computational geometry.\nRecommendations:\u00a0 CS 160",
+    "grading_basis": "Graded"
+  },
+  "CS 0165": {
+    "subject": "CS",
+    "title": "Cryptography",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "CS 15 and either CS/MATH 61 or MATH 65; or graduate standing.",
+    "attributes": "SOE-Computing\nBFA-Science/Technology\nLA-Distribution-Mathematics",
+    "description": "Introduction to cryptography, using a mathematical approach to prove properties about cryptographic\nsystems, from the first ciphers to quantum cryptography. How codes and ciphers work, and how they\ncan be broken. Private Key (Symmetric) and Public Key (Asymmetric) cryptography. Cryptographic protocols using block ciphers, methods for key exchange, hashing, message authentication, and digital signatures. Cryptographic protocols regarding secret sharing and digital cash.\nRecommendations: CS 160, or CS 170, or any 100 level MATH course",
+    "grading_basis": "Graded"
+  },
+  "CS 0166": {
+    "subject": "CS",
+    "title": "Computational Systems Biology",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "CS 15 and at least one CS class numbered above 100 or graduate standing",
+    "attributes": "SOE-Computing",
+    "description": "(Cross-listed as BME 144) Computational modeling of complex biological systems to analyze their emergent properties and understand or predict system behavior. Molecular and protein modeling in the context of biochemical networks. Application of these models across a select set of applications such as metabolomics, gut microbiome analysis, modularity analysis, flux balance analysis, and biological discovery. Introductions to machine learning, linear systems, and statistical concepts that are commonly used in systems biology.",
+    "grading_basis": "Graded"
+  },
+  "CS 0167": {
+    "subject": "CS",
+    "title": "Computational Biology",
+    "units": "3.00",
+    "typically_offered": "Fall Term",
+    "requirements": "Requires the completion of CS 15 or graduate standing.",
+    "attributes": "SOE-Computing\nBFA-Science/Technology\nLA-Distribution-Mathematics",
+    "description": "(Cross listed as BME 167) Computational challenges in molecular biology, including sequence alignment and comparison, genomic annotation, transcriptomic data analysis, and proteomics. Underlying computational techniques such as dynamic programming, hidden Markov models, statistical analyses, and search and optimization procedures.",
+    "grading_basis": "Graded"
+  },
+  "CS 0168": {
+    "subject": "CS",
+    "title": "Convex Optimization",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "Math 70 or graduate standing",
+    "attributes": "SoE-Engineering",
+    "description": "(Cross-listed with EE 109) Convex optimization theory and algorithms. Convex sets, convex functions and convex optimization problems; duality theory and optimality conditions; algorithms for solving convex problems including descent, gradient descent, Newton and interior point methods. Examples of applications taken from communications, signal processing, machine learning and other fields. Students may receive credit for only one of the following courses: EE109, EE159, or CS169",
+    "grading_basis": "Graded"
+  },
+  "CS 0169": {
+    "subject": "CS",
+    "title": "Statistical Bioinformatics",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "",
+    "attributes": "SOE-Computing",
+    "description": "Computational methods and analyses in the context of bioinformatics and biomedical data. Statistical methods in bioinformatics and biomedicine, including the heterogeneous high-dimensional data that tends to arise in this context. Assessment of hypotheses and data quality, visualization, and identification of patterns, outliers, and artifacts of bioinformatics data. Probability estimation through simulation. Presentation of statistical results to specific audiences.\nRecommendations: CS 11 and (CS/Math 61 or Math 65), or graduate standing.",
+    "grading_basis": "Graded"
+  },
+  "CS 0170": {
+    "subject": "CS",
+    "title": "Computation Theory",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "CS 15 with C- or better and one of (CS 61, Math 61, or Math 65) with C- or better) or Graduate Standing",
+    "attributes": "SOE-Computing\nBFA-Science/Technology\nLA-Distribution-Mathematics",
+    "description": "(Cross-listed as MATH 191).\u00a0 Models of computation: Turing machines, pushdown automata, and finite automata. Grammars and formal languages, including context-free languages and regular sets. Important problems, including the halting problem and language equivalence theorems.",
+    "grading_basis": "Graded"
+  },
+  "CS 0171": {
+    "subject": "CS",
+    "title": "Human Computer Interaction",
+    "units": "3.00",
+    "typically_offered": "Spring Term",
+    "requirements": "",
+    "attributes": "SOE-Computing\nBFA-Science/Technology\nLA-Distribution-Mathematics",
+    "description": "Introduction to human-computer interaction, or how computers communicate with people. Methodology for designing and testing user interfaces, interaction styles (command line, menus, graphical user interfaces, virtual reality), interaction techniques (voice, gesture, eye movement), design guidelines, and user-interface management system software. Students will design a small user interface, program a prototype, and test the result for usability.\nRecommendations: CS 15 or junior/senior in CBS major",
+    "grading_basis": "Graded"
+  },
+  "CS 0172": {
+    "subject": "CS",
+    "title": "HCI for Disability",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "(CS 171 OR CS 133) OR ((senior standing OR any course in PSY) AND (ES 2 or CS 10 or CS 11)) OR graduate standing",
+    "attributes": "SOE-Computing",
+    "description": "Research exploration of human-computer interaction (HCI) applied to meet the needs of users with disabilities. Approaches include assistive technology and accessibility. Academic papers from the HCI community, personal narratives from disabled people, and readings from disability studies literature. Final project.\nRecommendations: CS 171, CS 133, or another course in HCI or a related area. Also, a prior course that involves substantial reading of the academic literature.",
+    "grading_basis": "Graded"
+  },
+  "CS 0175": {
+    "subject": "CS",
+    "title": "Computer Graphics",
+    "units": "3.00",
+    "typically_offered": "Fall Term",
+    "requirements": "Completion of CS 40 or CS/DS/SSD Graduate Standing",
+    "attributes": "SOE-Computing\nBFA-Science/Technology\nLA-Distribution-Mathematics",
+    "description": "The course provides the background to understand and build interactive graphics systems. Introduction to computer graphics from simple two-dimensional graphics through three-dimensional viewing and transforms. Interactive graphics programming, raster graphics, raster algorithms, geometrical transformations, viewing in three dimensions, modeling and hierarchical data structures, visual realism, virtual reality, interaction devices, tasks and techniques. Final project.\nRecommendations:\u00a0 MATH 42\u00a0 or 44, and MATH 70 or 72, or graduate standing.",
+    "grading_basis": "Graded"
+  },
+  "CS 0177": {
+    "subject": "CS",
+    "title": "Visualization",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "CS 15 and (CS/Math 61 or Math 65) or Grad Standing",
+    "attributes": "SOE-Computing",
+    "description": "Visualization as a tool for data analysis, recall, inference, and decision-making. Tools for visual description and presentation. Principles of effective visualization, including data-visual mapping, interaction techniques, color theory, cognitive and perceptual psychology, and human factors of visual depictions of data.",
+    "grading_basis": "Graded"
+  },
+  "CS 0178": {
+    "subject": "CS",
+    "title": "Visual Analytics",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "CS 15 and (CS/Math 61 or Math 65) or Grad Standing",
+    "attributes": "SOE-Computing",
+    "description": "The science of combining interactive visual interfaces with data science, machine learning, and AI algorithms to support analytical reasoning. Principles, approaches, and tools for deriving insight from large, dynamic, ambiguous, and often conflicting data, and communicating findings effectively to aid in decision-making. Theoretical foundations illustrated via applying and developing visual analytics tools, as well as evaluating the effectiveness of these tools.\nRecommendations: CS 20 or 120.",
+    "grading_basis": "Graded"
+  },
+  "CS 0179": {
+    "subject": "CS",
+    "title": "Experimental Methods for Engineers",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "",
+    "attributes": "SoE-Engineering",
+    "description": "Design, execution, and analysis of experiments involving both human participants and machine systems. Theoretical underpinnings of experimental methods, as well as practical aspects. Applications in human-computer interaction, robotics, AI, and systems engineering. Experimental design principles, data collection and statistical analysis methods, and ethical research practices. Final project including experimentation.\n\nRecommendation: prior coursework in statistics",
+    "grading_basis": "Graded"
+  },
+  "CS 0182": {
+    "subject": "CS",
+    "title": "Cyber in the Civilian Sector: Threats and Upheavals",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "",
+    "attributes": "",
+    "description": "(Cross-listed as DHP P236) There is a myth that the Internet erases borders. But as Internet companies\u2019 ability to place localized ads show, that\u2019s false. What\u2019s more accurate is that the Internet complicates a nation\u2019s ability to control of the flow of information within its borders. (This is not a new challenge for sovereign nations; consider the telegraph.) This fluidity has created great economic opportunity and simplified trans-border access, the latter potentially threatening security and other basic state functions. With bits increasingly controlling the world around us, the Digital Revolution poses a highly disruptive threat. In this course, we\u2019ll explore cyber clashes in the civilian sec-tor: from jurisdictional issues and the challenges posed by new technologies to criminal activities and impacts on civil infrastructures. While several of the topics are also covered in International Cyber Conflict: An Introduction to Power and Conflict in Cyberspace, DHP P249, the intersection between the two courses will be relatively minimal. Cyber in the Civilian Sector will have a greater focus on technology and, naturally enough, on the civilian, as opposed to national security, side of the house.",
+    "grading_basis": "Graded"
+  },
+  "CS 0183": {
+    "subject": "CS",
+    "title": "Privacy in the Digital Age",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "",
+    "attributes": "",
+    "description": "(Cross-listed with DHP P237) This module will provide an introduction to the threats to and protections for privacy in the digital age, examining public and private sector threats, and looking at issues from an international point of view. Topics to be covered include privacy threat models, location tracking and first and third party collection by private parties, government threats to privacy, and privacy protective technologies. No programming background needed, but a willingness and interest to play with digital tools is required.",
+    "grading_basis": "Graded"
+  },
+  "CS 0184": {
+    "subject": "CS",
+    "title": "Cyberlaw and Cyberpolicy",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "",
+    "attributes": "",
+    "description": "(Cross-listed w/ ILO 184) The complex legal issues of cyberspace, including the effect of the Digital Revolution on existing laws concerning wiretapping, copyright, and espionage; influence of the Digital Revolution on First, Fourth, and Fifth Amendment law; failure and solutions of copyright in the Digital Age; failures and limitations of the Computer Fraud and Abuse Act, and function of the Law of Armed Conflict. Focus is placed on U.S. law and jurisprudence, with some consideration of international perspectives.\n\nRecommendations: familiarity with Internet systems and/or law and policy",
+    "grading_basis": "Graded"
+  },
+  "CS 0191": {
+    "subject": "CS",
+    "title": "Research",
+    "units": "3.00",
+    "typically_offered": "Spring Term",
+    "requirements": "",
+    "attributes": "SOE-Computing",
+    "description": "Research on a topic in Computer Science or a related discipline, culminating in a final paper describing accomplishments, with the goal of advancing the state of the art. Topic is proposed by a faculty sponsor in Computer Science.\nFaculty consent required. Students sign up for a section that corresponds to a faculty member.",
+    "grading_basis": "Graded"
+  },
+  "CS 0193": {
+    "subject": "CS",
+    "title": "Directed Study",
+    "units": "0.00 - 4.00",
+    "typically_offered": "Fall Term",
+    "requirements": "",
+    "attributes": "SOE-Computing\nBFA-Science/Technology\nLA-Distribution-Mathematics",
+    "description": "Guided study of an approved topic. Please see departmental website for specific details.",
+    "grading_basis": "Graded"
+  },
+  "CS 0195": {
+    "subject": "CS",
+    "title": "Cybersecurity Clinic I",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "A- in CS 116, CS 114, CS 28, or PS 188 and Junior or Senior Standing,\u00a0 or Grad",
+    "attributes": "SOE-Computing",
+    "description": "Students work in teams on year-long open-ended projects for real clients. Password management, asset tracking, incident response planning, business continuity planning, risk mitigation, source code review, vulnerability assessments, penetration testing, and training. Cybersecurity Clinic is a member of the The\nConsortium of Cybersecurity Clinics.\nStudents who take CS 195 will continue working on the same project in CS 196 the following semester.\nAdditional requirements apply. See Course Notes for details on applying to the Cybersecurity Clinic program and signing up for the course.",
+    "grading_basis": "Graded"
+  },
+  "CS 0196": {
+    "subject": "CS",
+    "title": "Cybersecurity Clinic II",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "CS 195",
+    "attributes": "SOE-Computing",
+    "description": "Continuation of the projects started in CS 195 in the prior semester. Students work in teams on year-long open-ended projects for real clients. Password management, asset tracking, incident response planning, business continuity planning, risk mitigation, source code review, vulnerability assessments, penetration testing, and training. Cybersecurity Clinic is a member of the The Consortium of Cybersecurity Clinics.",
+    "grading_basis": "Graded"
+  },
+  "CS 0197": {
+    "subject": "CS",
+    "title": "Honors Thesis-computer Science A",
+    "units": "3.00",
+    "typically_offered": "Fall Term",
+    "requirements": "",
+    "attributes": "Senior Honors Thesis\nSOE-Computing\nBFA-Science/Technology\nLA-Distribution-Mathematics",
+    "description": "Honors Thesis Computer Science.Please see departmental website for specific details.",
+    "grading_basis": "Graded"
+  },
+  "CS 0201": {
+    "subject": "CS",
+    "title": "Cyber for Future Policymakers",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "",
+    "attributes": "",
+    "description": "(Cross-listed w/ DHP D291) Graduate version of CS 12. Relevance of computer technologies to policy development. Internet architecture and basic networking, the Web, cloud architectures, cryptography, security and privacy, artificial intelligence and machine learning, and open-source systems. Developing technologies, including quantum computing and post-quantum cryptography.\nPrerequisites: Graduate standing in a discipline other than Computer Science, Data Science, Bioinformatics, Cognitive Science, or Human-Robot Interaction.\nRecommendation: An introductory course in computer science including programming in any language, roughly equivalent to CS 10 or 11.",
+    "grading_basis": "Graded"
+  },
+  "CS 0202": {
+    "subject": "CS",
+    "title": "How Systems Work",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "",
+    "attributes": "",
+    "description": "(Cross-listed w/ DHP D292) Graduate version of CS 13. How computing systems work: bits, bytes, the representation of information, the CPU, assembly language, programming languages. Networking: including peering, packets, and the Internet. Algorithms and the fundamental limitations of computing.\nRecommendations: An introductory course in computer science including programming in any language, roughly equivalent to CS 10 or 11.",
+    "grading_basis": "Graded"
+  },
+  "CS 0203": {
+    "subject": "CS",
+    "title": "How Systems Fail",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "CS 202 or permission of instructor",
+    "attributes": "",
+    "description": "(Cross-listed w/ DHP D293) Graduate version of CS 27. Failure of computer systems within the larger context of complex systems, including the power grid and aviation. Failures of algorithms and protocols, engineering and implementation, systems and applications, people and culture. Attacks, attack recovery, security, privacy, and attribution. Case studies of failures and attacks, including distributed denial of service, Meltdown, Spectre, and spear-phishing attacks.",
+    "grading_basis": "Graded"
+  },
+  "CS 0204": {
+    "subject": "CS",
+    "title": "Programming for Data Science",
+    "units": "4.00",
+    "typically_offered": "Various Terms",
+    "requirements": "MSCS and CS Ph.D. graduate students may not take this course for credit.",
+    "attributes": "",
+    "description": "algorithms for data manipulation, cleaning, and preparation. Design of data\nmanipulation programs. Coding standards and practices. Use and creation of\nsoftware libraries. Techniques for improving program performance. Examples\ndrawn from data preparation and transformation, statistical data analysis, machine\nlearning, deep learning, and deep data science including recommendation systems\nand trend analysis. Co-located with CS 30. Students enrolled in CS 204 are\nexpected to meet requirements for CS 30, along with an additional term project.\n\nRecommendations: a course in data structures that is roughly equivalent to CS 15,\nand a course in linear algebra roughly equivalent to Math 70.",
+    "grading_basis": "Graded"
+  },
+  "CS 0226": {
+    "subject": "CS",
+    "title": "Numerical Analysis",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "(MATH 51 or 153) & (Math 70 or 72)",
+    "attributes": "",
+    "description": "(Cross-list w/ MATH225)\u00a0 Analysis of algorithms involving computation with real numbers. Interpolation, approximation, orthogonal polynomials, methods for solving linear and nonlinear systems of equations, integration including Gaussian quadrature, ordinary differential equations including A-stability, introduction to methods for hyperbolic partial differential equations: upwinding, Lax-Friedrichs, Lax-Wendroff. Strong theoretical emphasis.\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0 Prerequisites: Math 51 or 153, Math 70 or 72, and graduate standing; or permission of instructor.",
+    "grading_basis": "Graded"
+  },
+  "CS 0228": {
+    "subject": "CS",
+    "title": "Numerical Linear Algebra",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "Math 70 or 72 or consent of instructor",
+    "attributes": "",
+    "description": "(Cross-list w/ MATH226) Design and analysis of algorithms for solving linear systems of equation, least squares problems, and eigenvalue problems, with a strong emphasis on matrix theory.\u00a0 Unitary matrices (including projections, rotations, and reflections).\u00a0 Matrix factorizations (including LU, Cholesky, QR, and the singular value decomposition).\u00a0 Conditioning; stability; perturbation analysis; operation counts.\u00a0 Krylov subspace methods (including theoretical analysis, preconditioning, and the connection to Gaussian quadrature).\u00a0 Applications.\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0 Prerequisites: Math 70 or 72 and graduate standing; or permission of instructor.",
+    "grading_basis": "Graded"
+  },
+  "CS 0236": {
+    "subject": "CS",
+    "title": "Computational Learning Theory",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "",
+    "attributes": "",
+    "description": "Probabilistic and adversarial models of machine learning.\u00a0 Development and analysis of machine learning principles and algorithms, their computational complexity, data complexity and convergence properties.\u00a0 Computational and cryptographic limitations on algorithms for machine learning.\nRecommendations:\u00a0 CS 160, EE 104 or MATH 162, or permission of instructor.",
+    "grading_basis": "Graded"
+  },
+  "CS 0239": {
+    "subject": "CS",
+    "title": "Ethics for AI, Robotics, and Human-Robot Interaction",
+    "units": "3.00",
+    "typically_offered": "",
+    "requirements": "CS MS or PhD or DS MS or HRI MS",
+    "attributes": "",
+    "description": "Technical challenges of endowing autonomous artificial agents with normative principles that will allow them to operate successfully in human societies. Algorithmic approaches in artificial agents (rule-based, utility-based, behavior-based, etc.) and their links to philosophical foundations of the main ethical theories (virtue ethics, deontology, utilitarianism). Conceptual and mathematical analysis of assumptions underlying each algorithmic approach as well as implementation in agent-based simulations. Functional and performance tradeoffs of the algorithms and their implications for autonomous robots and AI systems. Mathematical and computational challenges of the different proposals for \"implicit\" and \"explicit\" ethical agents, including inverse reinforcement learning, verification-based approaches, and model checking.",
+    "grading_basis": "Graded"
+  },
+  "CS 0250": {
+    "subject": "CS",
+    "title": "Advanced Special Topics",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "",
+    "attributes": "",
+    "description": "Content and prerequisites to be announced. Please see departmental website for specific details.",
+    "grading_basis": "Graded"
+  },
+  "CS 0260": {
+    "subject": "CS",
+    "title": "Advanced Algorithms",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "",
+    "attributes": "",
+    "description": "(Cross-listed as MATH 221) Design and analysis of sequential, parallel, probabilistic, and approximation algorithms. Graph algorithms, sorting, searching, geometric algorithms, mathematical programming, lower bounds, and intractable problems.\nRecommendations:\u00a0 CS 160",
+    "grading_basis": "Graded"
+  },
+  "CS 0263": {
+    "subject": "CS",
+    "title": "Advanced Computational Geometry",
+    "units": "2.00",
+    "typically_offered": "Various Terms",
+    "requirements": "",
+    "attributes": "",
+    "description": "(Cross-listed as MATH 281.) Design and analysis of sequential, parallel, probabilistic, and approximation algorithms for geometry problems. Geometric data structures, complexity, searching, computation, and applications. Selected advanced topics.\nRecommendations:\u00a0 CS 163 or permission of instructor.",
+    "grading_basis": "Graded"
+  },
+  "CS 0265": {
+    "subject": "CS",
+    "title": "Parallel Computation",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "",
+    "attributes": "",
+    "description": "Existing and proposed architectures for parallel computation. Fundamental synchronization and communication protocols. Algorithm development for distributed memory multicomputers.\nRecommendations:\u00a0 CS 15 and 160.",
+    "grading_basis": "Graded"
+  },
+  "CS 0270": {
+    "subject": "CS",
+    "title": "Theory Of Computation",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "",
+    "attributes": "",
+    "description": "Computability, undecidability, computational complexity.\nRecommendations: CS 170.",
+    "grading_basis": "Graded"
+  },
+  "CS 0272": {
+    "subject": "CS",
+    "title": "User-interface Software",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "",
+    "attributes": "",
+    "description": "Emerging new non-WIMP (window icon menu pointer) user interface styles, such as virtual reality, lightweight, non-command, tangible, natural, continuous, and parallel interfaces. Techniques, languages, abstractions, and tools for building current and future user-computer interfaces. Project in designing, prototyping, and building a non-WIMP user interface, with class discussions and critiques.\nRecommendations:\u00a0 CS 15, plus a course related to human-computer interaction.",
+    "grading_basis": "Graded"
+  },
+  "CS 0275": {
+    "subject": "CS",
+    "title": "Advanced Computer Graphics",
+    "units": "3.00",
+    "typically_offered": "Spring Term",
+    "requirements": "",
+    "attributes": "",
+    "description": "Advanced Topics in Computer Graphics. Emphasis will change from year to year and may include physics-based modeling (including particle systems, animation kinematics, deformation, fluid modeling), advanced rendering techniques, shape representation and modeling, and computer animation.\nRecommendations:\u00a0 CS 175 and a good working knowledge of the C programming language.",
+    "grading_basis": "Graded"
+  },
+  "CS 0277": {
+    "subject": "CS",
+    "title": "Data Visualization",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "",
+    "attributes": "",
+    "description": "Selected advanced topics on the visualization of abstract structures, user-interface design, scientific visualization, visual languages, and graph drawing. The course includes the study and design of applications to software visualization, digital libraries, and multimedia. The class format is seminar style with presentation of research papers. Final projects will use advanced visualization tools.\nRecommendations:\u00a0 CS 160 or permission of instructor.",
+    "grading_basis": "Graded"
+  },
+  "CS 0288": {
+    "subject": "CS",
+    "title": "Master of Science Capstone Project I",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "CS 180 or 121, and enrollment in the Master of Science in Computer Science Online program.",
+    "attributes": "",
+    "description": "Part one of a two-course, hands-on, and project-based culmination to\nthe Master of Science in Computer Science Online program. Application of principles, strategies, methods, and tools for requirements analysis and design of a programming project, including project planning, project management, and proof of concept prototyping. Formulation of a project plan, including estimation of project completion requirements and timeline. To be taken in the second-to-last term of the Master of Science in Computer Science Online degree. Not available to students outside that program.\nPrerequisites: CS 180 or 121, and enrollment in the Master of\nScience in Computer Science Online program.",
+    "grading_basis": "Graded"
+  },
+  "CS 0289": {
+    "subject": "CS",
+    "title": "Master of Science Capstone Project II",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "Completion of CS 288 and enrollment in the Master of Science in Computer Science Online program.",
+    "attributes": "",
+    "description": "Part two of a two-course, hands-on, project-based culmination experience for the Master of Science in Computer Science Online program. Implementation of the project defined in part one, including use of principles, tools, and strategies for implementation, debugging, testing, documentation, maintenance, and release management. Presentation of final project results and documentation. To be taken in the last term of the Master of Science in Computer Science Online degree. Not available to students outside that program.\nPrerequisites: CS 288, and enrollment in the Master of Science in Computer Science Online program.",
+    "grading_basis": "Graded"
+  },
+  "CS 0290": {
+    "subject": "CS",
+    "title": "Programming Project",
+    "units": "3.00",
+    "typically_offered": "Various Terms",
+    "requirements": "",
+    "attributes": "",
+    "description": "Independent development of a complete computer program for an approved task, including design, implementation, and documentation.Please see departmental website for specific details.",
+    "grading_basis": "Graded"
+  },
+  "CS 0291": {
+    "subject": "CS",
+    "title": "Seminar in Computer Science",
+    "units": "0.00",
+    "typically_offered": "Various Terms",
+    "requirements": "CS, Cognitive Science, or Human-Robot Interaction PhD Only",
+    "attributes": "",
+    "description": "A weekly seminar with guest speakers discussing research challenges and recent advances in Computer Science. Pass/fail only. Satisfactory completion requires students attend and provide feedback for at least 50% of the seminars.",
+    "grading_basis": "Satisfactory/Unsatisfactory"
+  },
+  "CS 0293": {
+    "subject": "CS",
+    "title": "Master's Project",
+    "units": "0.00 - 4.00",
+    "typically_offered": "Fall Term",
+    "requirements": "",
+    "attributes": "",
+    "description": "Guided individual study of an approved topic suitable for a master's design project.\u00a0 Please see departmental website for specific details.\nFaculty consent required. Students sign up for a section that corresponds to a faculty member.",
+    "grading_basis": "Graded"
+  },
+  "CS 0295": {
+    "subject": "CS",
+    "title": "Masters Thesis",
+    "units": "0.00 - 6.00",
+    "typically_offered": "Various Terms",
+    "requirements": "",
+    "attributes": "",
+    "description": "Guided individual study of an approved topic suitable for a master's design project. Please see departmental website for specific details.\nFaculty consent required. Students sign up for a section that corresponds to a faculty member.",
+    "grading_basis": "Graded"
+  },
+  "CS 0296": {
+    "subject": "CS",
+    "title": "Masters Thesis",
+    "units": "3.00 - 6.00",
+    "typically_offered": "Spring Term",
+    "requirements": "",
+    "attributes": "",
+    "description": "Guided individual study of an approved topic suitable for a master's design project. Please see departmental website for specific details.",
+    "grading_basis": "Graded"
+  },
+  "CS 0297": {
+    "subject": "CS",
+    "title": "Dissertation Research",
+    "units": "1.00 - 9.00",
+    "typically_offered": "Fall Term",
+    "requirements": "Ph.D. student standing in Computer Science",
+    "attributes": "",
+    "description": "Guided research on a topic suitable for a doctoral dissertation. Please see departmental website for specific details.\nPrerequisites: Ph.D. student standing in Computer Science",
+    "grading_basis": "Satisfactory/Unsatisfactory"
+  },
+  "CS 0299": {
+    "subject": "CS",
+    "title": "Internship In Computer Science",
+    "units": "1.00",
+    "typically_offered": "Various Terms",
+    "requirements": "",
+    "attributes": "",
+    "description": "Study of approved topics in Computer Science in concert with an internship in computing or a related field outside the University.\nPrerequisites: Permission of instructor",
+    "grading_basis": "Satisfactory/Unsatisfactory"
+  },
+  "CS 0401": {
+    "subject": "CS",
+    "title": "Masters Degree Continuation",
+    "units": "0.00",
+    "typically_offered": "Various Terms",
+    "requirements": "",
+    "attributes": "Part Time Equivalent",
+    "description": "Part-time.Please see departmental website for specific details.",
+    "grading_basis": "Not Graded"
+  },
+  "CS 0402": {
+    "subject": "CS",
+    "title": "Masters Degree Continuation",
+    "units": "0.00",
+    "typically_offered": "All Terms",
+    "requirements": "",
+    "attributes": "Full Time Equivalent",
+    "description": "Full-time.Please see departmental website for specific details.",
+    "grading_basis": "Not Graded"
+  },
+  "CS 0404": {
+    "subject": "CS",
+    "title": "Graduate Engineering Co-op",
+    "units": "0.00",
+    "typically_offered": "Various Terms",
+    "requirements": "",
+    "attributes": "Full Time Equivalent",
+    "description": "",
+    "grading_basis": "Satisfactory/Unsatisfactory"
+  },
+  "CS 0405": {
+    "subject": "CS",
+    "title": "Grad Teaching Assistant",
+    "units": "0.00",
+    "typically_offered": "Various Terms",
+    "requirements": "CS, Cognitive Science, or Human-Robot Interaction PhD Only",
+    "attributes": "Graduate Teaching Assistantship",
+    "description": "",
+    "grading_basis": "Satisfactory/Unsatisfactory"
+  },
+  "CS 0406": {
+    "subject": "CS",
+    "title": "Grad Research Assistant",
+    "units": "0.00",
+    "typically_offered": "Various Terms",
+    "requirements": "CS, Cognitive Science, or Human-Robot Interaction PhD Only",
+    "attributes": "Graduate Research Assistantship",
+    "description": "",
+    "grading_basis": "Satisfactory/Unsatisfactory"
+  },
+  "CS 0501": {
+    "subject": "CS",
+    "title": "Doctoral Degree Continuation",
+    "units": "0.00",
+    "typically_offered": "Various Terms",
+    "requirements": "",
+    "attributes": "Part Time Equivalent",
+    "description": "Part-time.Please see departmental website for specific details.",
+    "grading_basis": "Not Graded"
+  },
+  "CS 0502": {
+    "subject": "CS",
+    "title": "Doctoral Degree Continuation",
+    "units": "0.00",
+    "typically_offered": "All Terms",
+    "requirements": "",
+    "attributes": "Full Time Equivalent",
+    "description": "Full-time.Please see departmental website for specific details.",
+    "grading_basis": "Not Graded"
   }
 }

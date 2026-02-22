@@ -1,7 +1,9 @@
 'use client';
 
 import React, { useEffect } from 'react';
+import Link from 'next/link';
 import Course from '../../types/Course';
+import { getElectiveSlugFromTitle } from '../../lib/electiveConfig';
 
 type ShuByCategory = { mns: number; hass: number; ce: number };
 
@@ -12,7 +14,7 @@ type Props = {
   onClose: () => void;
   onToggleComplete?: (completed: boolean) => void;
   onNotesChange?: (notes: string) => void;
-};
+}; 
 
 function Chip({ children }: { children: React.ReactNode }) {
   return (
@@ -95,6 +97,8 @@ export default function CoursePopup({
   }, [open, onClose]);
 
   if (!course) return null;
+
+  const electiveSlug = course.id.startsWith('req-') ? getElectiveSlugFromTitle(course.title) : undefined;
 
   const term = course.typically_offered ?? 'Spring / Fall';
   const shu = course.units ?? 4;
@@ -193,6 +197,15 @@ export default function CoursePopup({
             <SectionCard title="Recommended" compact>
               <div className="text-sm text-slate-400">—</div>
             </SectionCard>
+
+            {electiveSlug && (
+              <Link
+                href={`/dashboard/elective/${electiveSlug}`}
+                className="mt-2 inline-flex items-center justify-center rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50"
+              >
+                Fill out elective →
+              </Link>
+            )}
           </div>
 
           {/* footer - only show SHU for categories relevant to this course */}

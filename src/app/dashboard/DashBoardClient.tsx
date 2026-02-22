@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useMemo, useCallback } from "react";
+import { useRouter } from "next/navigation";
 import YearGroup from "./yearGroup";
 import CoursePopup from "./PopUp";
 import Course from "../../types/Course";
@@ -12,6 +13,7 @@ type Props = {
 };
 
 export default function DashboardClient({ courses, minTotalSHU = 120 }: Props) {
+  const router = useRouter();
   const [allCourses, setAllCourses] = useState<Course[]>(courses);
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
   const [panelOpen, setPanelOpen] = useState(false);
@@ -52,15 +54,24 @@ export default function DashboardClient({ courses, minTotalSHU = 120 }: Props) {
   }, []);
 
   const handleToggleComplete = useCallback(
-    (completed: boolean) => {
+    async (completed: boolean) => {
       if (!selectedCourse) return;
+      const courseId = selectedCourse.id.replace(/\s/g, "");
+      const status = completed ? "COMPLETED" : "NOT_STARTED";
+      const res = await fetch("/api/progress", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ courseId, status }),
+      });
+      if (!res.ok) return;
       const updated = { ...selectedCourse, started: completed };
       setAllCourses((prev) =>
         prev.map((c) => (c.id === updated.id ? updated : c))
       );
       setSelectedCourse(updated);
+      router.refresh();
     },
-    [selectedCourse]
+    [selectedCourse, router]
   );
 
   return (
