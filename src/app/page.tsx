@@ -1,7 +1,6 @@
 import { redirect } from "next/navigation";
 import { auth } from "@clerk/nextjs/server";
 import { prisma } from "@/lib/prisma";
-import Nav from "@/components/landing/Nav";
 import Hero from "@/components/landing/Hero";
 import Features from "@/components/landing/Features";
 import CTA from "@/components/landing/CTA";
