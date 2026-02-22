@@ -1,5 +1,8 @@
+'use client';
+
 import React from 'react';
 import Course from '@/types/Course';
+import Image from 'next/image';
 import CourseCard from '../../components/Dashboard/CourseCard/CourseCard';
 import flag from "../../icons/material-symbols_flag.svg"
 
@@ -36,7 +39,7 @@ export default function YearGroup({
         <div className="flex items-center gap-1">
           {Array.from({ length: yearNumber }).map((_, i) => (
             <span key={i} aria-hidden>
-              <img src={flag.src} alt="Flag icon" className="h-5 w-5" />
+              <Image src={flag} alt="Flag icon" className="h-5 w-5" />
             </span>
           ))}
         </div>
