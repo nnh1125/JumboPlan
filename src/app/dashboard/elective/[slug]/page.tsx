@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import ElectivePage from "../../elective_page";
-import { getElectiveConfig, getAllElectiveSlugs } from "../../../lib/electiveConfig";
+import { getElectiveConfig, getAllElectiveSlugs } from "@/lib/electiveConfig";
 
 type Props = {
   params: Promise<{ slug: string }>;

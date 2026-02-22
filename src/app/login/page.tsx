@@ -1,23 +1,25 @@
+"use client";
+
 import { useSignIn } from "@clerk/clerk-react";
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 
-// ── Inject Google Fonts once ───────────────────────────────────────────────────
-const fontLink = document.getElementById("jumboplan-fonts");
-if (!fontLink) {
-  const link = document.createElement("link");
-  link.id = "jumboplan-fonts";
-  link.rel = "stylesheet";
-  link.href =
-    "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Jersey+25&display=swap";
-  document.head.appendChild(link);
-}
-
-// ── Keyframes injected once ────────────────────────────────────────────────────
-const styleTag = document.getElementById("jumboplan-styles");
-if (!styleTag) {
-  const style = document.createElement("style");
-  style.id = "jumboplan-styles";
-  style.textContent = `
+// ── Inject Google Fonts and styles once (client-only) ───────────────────────────
+function injectAssets() {
+  if (typeof document === "undefined") return;
+  const fontLink = document.getElementById("jumboplan-fonts");
+  if (!fontLink) {
+    const link = document.createElement("link");
+    link.id = "jumboplan-fonts";
+    link.rel = "stylesheet";
+    link.href =
+      "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Jersey+25&display=swap";
+    document.head.appendChild(link);
+  }
+  const styleTag = document.getElementById("jumboplan-styles");
+  if (!styleTag) {
+    const style = document.createElement("style");
+    style.id = "jumboplan-styles";
+    style.textContent = `
     @keyframes jp-spin { to { transform: rotate(360deg); } }
     .jp-orbit-ring {
       animation: jp-spin 18s linear infinite;
@@ -33,7 +35,8 @@ if (!styleTag) {
     }
     .jp-submit:active { transform: translateY(0); }
   `;
-  document.head.appendChild(style);
+    document.head.appendChild(style);
+  }
 }
 
 // ── Sub-components ─────────────────────────────────────────────────────────────
@@ -153,6 +156,7 @@ const BlueBlock: React.FC = () => (
 // ── Main component ─────────────────────────────────────────────────────────────
 
 const JumboPlanLogin: React.FC = () => {
+  useEffect(() => injectAssets(), []);
   const { signIn, isLoaded } = useSignIn();
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
