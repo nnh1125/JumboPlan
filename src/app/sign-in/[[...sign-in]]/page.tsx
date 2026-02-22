@@ -5,8 +5,8 @@ export default function SignInPage() {
     <div className="flex min-h-screen items-center justify-center">
       <SignIn
         signUpUrl="/sign-up"
-        fallbackRedirectUrl="/"
-        forceRedirectUrl="/"
+        fallbackRedirectUrl="/dashboard"
+        forceRedirectUrl="/dashboard"
       />
     </div>
   );

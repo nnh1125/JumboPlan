@@ -38,17 +38,15 @@ export default async function HomePage() {
     );
   }
 
-  // Ensure user exists in DB
+  // Ensure user exists and check onboarding status in one query
   const user = await prisma.user.upsert({
     where: { authId: userId },
     update: {},
     create: { authId: userId },
+    include: { profile: true },
   });
 
-  // Check onboarding status
-  const profile = await prisma.userProfile.findUnique({
-    where: { userId: user.id },
-  });
+  const profile = user.profile;
 
   if (!profile) redirect("/onboarding");
   redirect("/dashboard");

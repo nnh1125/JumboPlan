@@ -45,11 +45,10 @@ export default function OnboardingPage() {
     }
   }
   return (
-    <div className="min-h-screen flex items-center justify-center font-sans"
-      style={{ background: "linear-gradient(180deg, #E3F1F9 0%, #BAE3FA 100%)", fontFamily: "'DM Sans', sans-serif" }}
+    <div className="min-h-screen flex items-center justify-center"
+      style={{ background: "linear-gradient(180deg, #E3F1F9 0%, #BAE3FA 100%)" }}
     >
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Jersey+25&display=swap');
         @keyframes jp-spin { to { transform: rotate(360deg); } }
         .jp-ring { animation: jp-spin 18s linear infinite; transform-origin: 100.5px 98.75px; }
         .jp-input::placeholder { color: #8AACBB; }
@@ -111,7 +110,6 @@ export default function OnboardingPage() {
             style={{
               border: "1.5px solid rgba(255,255,255,0.9)",
               background: "rgba(255,255,255,0.65)",
-              fontFamily: "'DM Sans', sans-serif",
               color: "#2C3E50",
             }}
           >
@@ -132,7 +130,6 @@ export default function OnboardingPage() {
             style={{
               border: "1.5px solid rgba(255,255,255,0.9)",
               background: "rgba(255,255,255,0.65)",
-              fontFamily: "'DM Sans', sans-serif",
               color: "#2C3E50",
             }}
           >
@@ -150,7 +147,6 @@ export default function OnboardingPage() {
               background: "linear-gradient(135deg, #5B9DB8 0%, #7AAABB 100%)",
               boxShadow: "0 4px 14px rgba(91,157,184,0.4)",
               border: "none",
-              fontFamily: "'DM Sans', sans-serif",
             }}
           >
             {loading ? "Loading..." : "Continue"}
