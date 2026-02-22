@@ -47,7 +47,7 @@ export default function YearGroup({
       </div>
 
       {/* Grid */}
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="flex flex-wrap gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
         {courses.map((course) => (
           <CourseCard
             key={course.id}
