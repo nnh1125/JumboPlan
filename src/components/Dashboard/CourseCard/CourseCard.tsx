@@ -127,7 +127,17 @@ const CourseCard: React.FC<Props> = (props) => {
   /*----------------------------------------*/
 
   return (
-    <div className='select-none'>
+    <div
+      className='select-none cursor-pointer'
+      onClick={!empty && 'onClick' in props ? props.onClick : undefined}
+      role={!empty ? 'button' : undefined}
+      tabIndex={!empty ? 0 : undefined}
+      onKeyDown={
+        !empty && 'onClick' in props
+          ? (e) => e.key === 'Enter' && props.onClick?.()
+          : undefined
+      }
+    >
       {body}
     </div>
   );

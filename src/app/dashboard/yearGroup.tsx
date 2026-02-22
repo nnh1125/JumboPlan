@@ -49,14 +49,13 @@ export default function YearGroup({
       {/* Grid */}
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {courses.map((course) => (
-          <div key={course.id} className="cursor-pointer">
-            <CourseCard
-              empty={false}
-              course={course}
-              onClick={() => onCourseClick?.(course)}
-              onCourseChange={(updated) => onCourseChange?.(updated)}
-            />
-          </div>
+          <CourseCard
+            key={course.id}
+            empty={false}
+            course={course}
+            onClick={() => onCourseClick?.(course)}
+            onCourseChange={(updated) => onCourseChange?.(updated)}
+          />
         ))}
 
         {Array.from({ length: emptyCount }).map((_, i) => (
