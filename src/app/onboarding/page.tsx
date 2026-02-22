@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { useRouter } from "next/dist/client/components/navigation";
 import { useState } from "react";
 
