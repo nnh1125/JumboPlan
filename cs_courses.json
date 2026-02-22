@@ -1,13 +1,20 @@
 {
-  "id": "",
-  "info": {
-    "subject": "",
-    "title": "",
-    "units": "",
-    "typically_offered": "",
-    "requirements": "",
-    "attributes": [],
-    "description": "",
-    "grading_basis": ""
+  "subject": "",
+  "title": "",
+  "units": "",
+  "typically_offered": "",
+  "requirements": "",
+  "attributes": "",
+  "description": "",
+  "grading_basis": "",
+  "CS 0001": {
+    "subject": "CS",
+    "title": "Collaborative Introduction to Computer Science",
+    "units": "2.00",
+    "typically_offered": "Various Terms",
+    "requirements": "First Years or Sophomores",
+    "attributes": "",
+    "description": "An optional preparatory course for students with no prior programming experience\nand limited experience in college-level STEM classes. Basics of programming\nincluding variables, control flow, subroutines, and problem solving in a hands-on,\ncollaborative environment. The class will meet over the latter half of the semester,\nand prepare students to enter CS11 with prior exposure to topics that CS 11\ndiscusses in depth. Pass/fail grading.\nRecommendations: high school algebra.",
+    "grading_basis": "Pass/Not Pass"
   }
 }

@@ -76,13 +76,14 @@ async def main():
             'units': '',
             'typically_offered': '',
             'requirements': '',
-            'attributes': [],
+            'attributes': '',
             'description': '',
             'grading_basis': ''
         }
 
         # Iterate through rows and click on each course 
-        for i in range(1, 2):  # skip header row
+        for i in range(1, 3):  # skip header row
+            nested = False
             course_row = rows.nth(i)
             course_link = course_row.locator("td").nth(0).locator("a")
             course_num= await course_link.inner_text()
@@ -92,7 +93,18 @@ async def main():
 
             # Extract frame
             inner_frame = page.frame_locator('[name^="ptModFrame_"]')
-            course_id = await inner_frame.locator("#DERIVED_CRSECAT_DESCR200").inner_text()
+
+            # check if need to click another session 
+            if await inner_frame.locator("#DERIVED_CRSECAT_DESCR200").count() > 0:
+                # directly assign course Id
+                course_id = await inner_frame.locator("#DERIVED_CRSECAT_DESCR200").inner_text()
+            else:
+                nested = True
+                # click on session to get course id
+                await inner_frame.get_by_role("link", name="Medford/Somerville Campus").click()
+                await page.wait_for_timeout(3000)
+                course_id = await inner_frame.locator("#DERIVED_CRSECAT_DESCR200").inner_text()
+
             id, subject, title = parse_course(course_id)
             print(f"Course ID: {course_id}")
 
@@ -105,8 +117,15 @@ async def main():
             # extract requirements
             requirements = await inner_frame.locator('#DERIVED_CRSECAT_DESCR254A\\$0').inner_text()
             
-            # extract attribute (this is not working)
-            # attribute = await inner_frame.locator("#DERIVED_CRSECAT_SSR_CRSE_ATTR_LONG\\$0").inner_text()
+            # extract attribute (safe: no timeout if missing)
+            attribute_locator = inner_frame.locator(
+                "#DERIVED_CRSECAT_SSR_CRSE_ATTR_LONG\\$0"
+            )
+
+            if await attribute_locator.count() > 0:
+                attributes = (await attribute_locator.inner_text()).strip()
+            else:
+                attributes = ""
 
             # grading_basis
             grading_basis = await inner_frame.locator("#SSR_CRSE_OFF_VW_GRADING_BASIS\\$0").inner_text()
@@ -130,10 +149,21 @@ async def main():
                 'units': units,
                 'typically_offered': typically_offered,
                 'requirements': requirements,
-                # 'attributes': attributes,
+                'attributes': attributes,
                 'description': description,
                 'grading_basis': grading_basis
             }
+
+            # close details and go back to course list
+            if nested:
+                await inner_frame.get_by_role("link", name="Medford/Somerville Campus").click()
+                await inner_frame.get_by_role("link", name="Medford/Somerville Campus").click()
+                nested = False
+            else:
+                print("Closing course details")
+                await inner_frame.get_by_role("link", name="Medford/Somerville Campus").click()
+            await page.wait_for_timeout(2000)
+
 
         # Open a json file to write to 
         with open("cs_courses.json", "w") as f:
