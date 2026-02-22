@@ -59,21 +59,52 @@ export default function OnboardingPage() {
 
         {/* Form */}
         <div className="w-full flex flex-col gap-[14px]">
-          <input
-            className="jp-input w-full h-[61px] px-[26px] rounded-[14px] text-[15px] backdrop-blur-md transition-all"
-            type="text"
-            placeholder="Enter your year"
-            style={{ border: "1.5px solid rgba(255,255,255,0.9)", background: "rgba(255,255,255,0.65)", fontFamily: "'DM Sans', sans-serif", color: "#2C3E50" }}
-          />
-          <input
-            className="jp-input w-full h-[61px] px-[26px] rounded-[14px] text-[15px] backdrop-blur-md transition-all"
-            type="text"
-            placeholder="Enter your major"
-            style={{ border: "1.5px solid rgba(255,255,255,0.9)", background: "rgba(255,255,255,0.65)", fontFamily: "'DM Sans', sans-serif", color: "#2C3E50" }}
-          />
+          {/* Year dropdown */}
+          <select
+            className="jp-input w-full h-[61px] px-[26px] rounded-[14px] text-[15px] backdrop-blur-md transition-all appearance-none"
+            defaultValue=""
+            style={{
+              border: "1.5px solid rgba(255,255,255,0.9)",
+              background: "rgba(255,255,255,0.65)",
+              fontFamily: "'DM Sans', sans-serif",
+              color: "#2C3E50",
+            }}
+          >
+            <option value="" disabled>
+              Select your year
+            </option>
+            {Array.from({ length: 7 }, (_, i) => 2025 + i).map((y) => (
+              <option key={y} value={y}>
+                {y}
+              </option>
+            ))}
+          </select>
+
+          {/* Major dropdown */}
+          <select
+            className="jp-input w-full h-[61px] px-[26px] rounded-[14px] text-[15px] backdrop-blur-md transition-all appearance-none"
+            defaultValue=""
+            style={{
+              border: "1.5px solid rgba(255,255,255,0.9)",
+              background: "rgba(255,255,255,0.65)",
+              fontFamily: "'DM Sans', sans-serif",
+              color: "#2C3E50",
+            }}
+          >
+            <option value="" disabled>
+              Select your major
+            </option>
+            <option value="cs">Computer Science</option>
+          </select>
+
           <button
             className="jp-btn w-full h-[61px] mt-1 rounded-[14px] text-white text-[15px] font-semibold cursor-pointer transition-all"
-            style={{ background: "linear-gradient(135deg, #5B9DB8 0%, #7AAABB 100%)", boxShadow: "0 4px 14px rgba(91,157,184,0.4)", border: "none", fontFamily: "'DM Sans', sans-serif" }}
+            style={{
+              background: "linear-gradient(135deg, #5B9DB8 0%, #7AAABB 100%)",
+              boxShadow: "0 4px 14px rgba(91,157,184,0.4)",
+              border: "none",
+              fontFamily: "'DM Sans', sans-serif",
+            }}
           >
             Continue
           </button>
