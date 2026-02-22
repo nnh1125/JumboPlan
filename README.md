@@ -29,7 +29,7 @@ Led frontend implementation. Designed and built the interactive dashboard UI, co
 Worked on scraping and data extraction from the university course catalog, parsing prerequisite structures, and generating structured JSON for ingestion into the system.
 
 ### Angela Yan
-Worked on frontend implementation of onboarding page and elective course page. Worked on the design system.
+Worked on frontend implementation of onboarding page and elective course page. Worked on prototyping flows. 
 
 ### Ivy Chang
 Led the design system for the Figma prototype.
