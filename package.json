@@ -15,7 +15,6 @@
     "dotenv": "^17.3.1",
     "next": "16.1.6",
     "pg": "^8.18.0",
-    "postcss": "^8.5.6",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "reactflow": "^11.11.4",
@@ -27,10 +26,17 @@
     "@types/pg": "^8.16.0",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "autoprefixer": "^10.4.24",
     "eslint": "^10.0.1",
     "eslint-config-next": "^0.2.4",
+    "postcss": "^8.5.6",
     "prisma": "^7.4.1",
     "tailwindcss": "^4.2.0",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.21.0",
     "typescript": "^5"
+  },
+  "prisma": {
+    "seed": "ts-node --esm prisma/seed.ts"
   }
 }
