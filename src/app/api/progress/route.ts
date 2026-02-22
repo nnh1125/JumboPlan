@@ -72,7 +72,7 @@ export async function PUT(req: Request) {
     create: { authId: userId },
   });
 
-  const resolvedId = (await resolveCourseId(courseId)) ?? courseId;
+  const resolvedId = (await resolveCourseId(courseId)) ?? courseId.replace(/\s/g, "");
 
   if (isNotStarted) {
     await prisma.userCourseStatus.deleteMany({
@@ -81,12 +81,24 @@ export async function PUT(req: Request) {
     return NextResponse.json({ ok: true, deleted: true });
   }
 
-  const courseExists = await prisma.course.findUnique({
+  let courseRecord = await prisma.course.findUnique({
     where: { id: resolvedId },
     select: { id: true },
   });
-  if (!courseExists) {
-    return NextResponse.json({ error: `Unknown courseId: ${courseId}` }, { status: 404 });
+
+  // Auto-create Course for degree-required courses not yet in DB (e.g. MATH 34 from degree.json)
+  if (!courseRecord) {
+    const match = resolvedId.match(/^([A-Za-z\/]+)(\d+)$/i);
+    if (match) {
+      const [, subject, number] = match;
+      await prisma.course.upsert({
+        where: { id: resolvedId },
+        create: { id: resolvedId, subject, number },
+        update: {},
+      });
+    } else {
+      return NextResponse.json({ error: `Unknown courseId: ${courseId}` }, { status: 404 });
+    }
   }
 
   const row = await prisma.userCourseStatus.upsert({

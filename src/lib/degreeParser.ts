@@ -109,6 +109,10 @@ const CURRICULUM_PREREQS: Record<string, string[]> = {
   "CS160": ["CS15", "CS40"],
   "CS105": ["CS15"],
   "CS80": ["CS15"],
+  // Math sequence: MATH 32 -> MATH 34 -> MATH 42, and MATH 34 -> MATH 70
+  "MATH34": ["MATH32"],
+  "MATH42": ["MATH34"],
+  "MATH70": ["MATH34"],
 };
 
 function isCurriculumPrereqSatisfied(code: string, completedIds: Set<string>): boolean {
@@ -353,6 +357,43 @@ export function parseDegreeToCourses(
   }
 
   return courses;
+}
+
+/** PrereqMap as plain object (JSON-serializable for client). */
+export type PrereqMapSerialized = Record<string, import("./prereqEval").PrereqNodeData | null>;
+
+/**
+ * Recompute eligibility for courses based on current `started` state.
+ * Call this on the client whenever course progress changes so dependent courses unlock instantly.
+ */
+export function recomputeCourseEligibility(
+  courses: Course[],
+  prereqMap?: PrereqMap | PrereqMapSerialized
+): Course[] {
+  const map = prereqMap instanceof Map ? prereqMap : new Map(Object.entries(prereqMap ?? {}));
+  const completedIds = new Set<string>();
+  for (const c of courses) {
+    if (c.started) completedIds.add(c.id.replace(/\s/g, ""));
+  }
+  return courses.map((c) => {
+    if (c.started) return { ...c, eligible: true };
+    const code = c.id.replace(/\s/g, "");
+    const baseCode = code.includes("-") ? code.split("-")[0] : code;
+    const prereqRoot = map.get(code) ?? map.get(baseCode);
+    let eligible: boolean;
+    if (CURRICULUM_PREREQS[baseCode]) {
+      eligible = isCurriculumPrereqSatisfied(baseCode, completedIds);
+    } else if (prereqRoot !== undefined && prereqRoot !== null && hasCoursePrereqs(prereqRoot)) {
+      eligible = evaluatePrereqNode(prereqRoot, completedIds);
+    } else if (prereqRoot !== undefined && prereqRoot !== null && !hasCoursePrereqs(prereqRoot)) {
+      const prereqIndex = PREREQ_ORDER.findIndex((p) => p.replace(/\s/g, "") === code || p.replace(/\s/g, "") === baseCode);
+      eligible = prereqIndex > 0 ? completedIds.has(PREREQ_ORDER[prereqIndex - 1].replace(/\s/g, "")) : true;
+    } else {
+      const prereqIndex = PREREQ_ORDER.findIndex((p) => p.replace(/\s/g, "") === code || p.replace(/\s/g, "") === baseCode);
+      eligible = prereqIndex > 0 ? completedIds.has(PREREQ_ORDER[prereqIndex - 1].replace(/\s/g, "")) : true;
+    }
+    return { ...c, eligible };
+  });
 }
 
 export function getCoursesByYear(courses: Course[]): Record<number, Course[]> {
