@@ -5,6 +5,7 @@ import Hero from "@/components/landing/Hero";
 import Features from "@/components/landing/Features";
 import CTA from "@/components/landing/CTA";
 import Footer from "@/components/landing/Footer";
+import Nav from "@/components/landing/Nav";
 
 export default async function HomePage() {
   const { userId } = await auth();
@@ -23,6 +24,8 @@ export default async function HomePage() {
 
       {/* Content */}
       <div className="relative mx-auto max-w-6xl px-6">
+        <Nav />
+
         <Hero />
 
         <Features />

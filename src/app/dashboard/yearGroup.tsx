@@ -30,7 +30,7 @@ export default function YearGroup({
   onCourseClick,
   onCourseChange,
 }: Props) {
-  const emptyCount = Math.max(0, totalSlots - courses.length);
+  const emptyCount = Math.max(0, totalSlots - courses.length - 2);
 
   return (
     <section className="w-full">
