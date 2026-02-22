@@ -1,4 +1,49 @@
+'use client'
+import { useRouter } from "next/dist/client/components/navigation";
+import { useState } from "react";
+
+function toProgramId(year: string, major: string) {
+  if (year === "2027" && major === "BSCS") return "BSCS";
+  return `${year}-${major}`.toUpperCase();
+}
+
+type ProgramOption = {
+  label: string;
+  programId: string;
+};
+
 export default function OnboardingPage() {
+  const router = useRouter();
+
+  const [year, setYear] = useState("2027");
+  const [major, setMajor] = useState("BSCS");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  async function onContinue() {
+    setLoading(true);
+    setError(null);
+
+    const programId = toProgramId(year, major);
+
+    try {
+      const res = await fetch("/api/profile", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ programId }),
+      });
+
+      if (!res.ok) {
+        const msg = await res.text();
+        throw new Error(msg || "Failed to save profile");
+      }
+
+      router.push("/dashboard");
+    } catch (e: any) {
+      setError(e?.message ?? "Something went wrong");
+      setLoading(false);
+    }
+  }
   return (
     <div className="min-h-screen flex items-center justify-center font-sans"
       style={{ background: "linear-gradient(180deg, #E3F1F9 0%, #BAE3FA 100%)", fontFamily: "'DM Sans', sans-serif" }}
@@ -59,24 +104,60 @@ export default function OnboardingPage() {
 
         {/* Form */}
         <div className="w-full flex flex-col gap-[14px]">
-          <input
-            className="jp-input w-full h-[61px] px-[26px] rounded-[14px] text-[15px] backdrop-blur-md transition-all"
-            type="text"
-            placeholder="Enter your year"
-            style={{ border: "1.5px solid rgba(255,255,255,0.9)", background: "rgba(255,255,255,0.65)", fontFamily: "'DM Sans', sans-serif", color: "#2C3E50" }}
-          />
-          <input
-            className="jp-input w-full h-[61px] px-[26px] rounded-[14px] text-[15px] backdrop-blur-md transition-all"
-            type="text"
-            placeholder="Enter your major"
-            style={{ border: "1.5px solid rgba(255,255,255,0.9)", background: "rgba(255,255,255,0.65)", fontFamily: "'DM Sans', sans-serif", color: "#2C3E50" }}
-          />
-          <button
-            className="jp-btn w-full h-[61px] mt-1 rounded-[14px] text-white text-[15px] font-semibold cursor-pointer transition-all"
-            style={{ background: "linear-gradient(135deg, #5B9DB8 0%, #7AAABB 100%)", boxShadow: "0 4px 14px rgba(91,157,184,0.4)", border: "none", fontFamily: "'DM Sans', sans-serif" }}
+          {/* Year dropdown */}
+          <select
+            className="jp-input w-full h-[61px] px-[26px] rounded-[14px] text-[15px] backdrop-blur-md transition-all appearance-none"
+            defaultValue=""
+            style={{
+              border: "1.5px solid rgba(255,255,255,0.9)",
+              background: "rgba(255,255,255,0.65)",
+              fontFamily: "'DM Sans', sans-serif",
+              color: "#2C3E50",
+            }}
           >
-            Continue
+            <option value="" disabled>
+              Select your year
+            </option>
+            {Array.from({ length: 7 }, (_, i) => 2025 + i).map((y) => (
+              <option key={y} value={y}>
+                {y}
+              </option>
+            ))}
+          </select>
+
+          {/* Major dropdown */}
+          <select
+            className="jp-input w-full h-[61px] px-[26px] rounded-[14px] text-[15px] backdrop-blur-md transition-all appearance-none"
+            defaultValue=""
+            style={{
+              border: "1.5px solid rgba(255,255,255,0.9)",
+              background: "rgba(255,255,255,0.65)",
+              fontFamily: "'DM Sans', sans-serif",
+              color: "#2C3E50",
+            }}
+          >
+            <option value="" disabled>
+              Select your major
+            </option>
+            <option value="cs">Computer Science</option>
+          </select>
+
+          <button
+            onClick={onContinue}
+            disabled={loading}
+            className="jp-btn w-full h-[61px] mt-1 rounded-[14px] text-white text-[15px] font-semibold cursor-pointer transition-all"
+            style={{
+              background: "linear-gradient(135deg, #5B9DB8 0%, #7AAABB 100%)",
+              boxShadow: "0 4px 14px rgba(91,157,184,0.4)",
+              border: "none",
+              fontFamily: "'DM Sans', sans-serif",
+            }}
+          >
+            {loading ? "Loading..." : "Continue"}
           </button>
+          <p className="text-xs text-gray-500">
+            Selected programId: <span className="font-mono">{toProgramId(year, major)}</span>
+          </p>
         </div>
 
       </div>

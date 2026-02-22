@@ -1,6 +1,8 @@
 @import "tailwindcss";
 :root {
-  --background: #ffffff;
+  color-scheme: light;            /* tells the browser you're in light mode */
+  --bg: #ffffff;
+  --text: #111111;
 }
 
 /* latin-ext */

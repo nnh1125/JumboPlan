@@ -92,7 +92,7 @@ const CourseCardTag: React.FC<Props> = (props) => {
   /*----------------------------------------*/
 
   return (
-    <span className='select-none'>
+    <span className='select-none text-[#5C4C4C]'>
       {/* Add Body */}
       {body}
     </span>
