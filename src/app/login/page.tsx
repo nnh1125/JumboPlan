@@ -1,6 +1,6 @@
 "use client";
 
-import { useSignIn } from "@clerk/clerk-react";
+import { useSignIn } from "@clerk/nextjs";
 import { FormEvent, useEffect, useState } from "react";
 
 // ── Inject Google Fonts and styles once (client-only) ───────────────────────────
