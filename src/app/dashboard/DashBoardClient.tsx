@@ -1,46 +1,37 @@
 'use client';
 
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import YearGroup from "./yearGroup";
-import Course from "@/types/Course";
+import Course from "../../types/Course";
+import { getCoursesByYear } from "../../lib/degreeParser";
 
 type Props = {
   courses: Course[];
 };
 
 export default function DashboardClient({ courses }: Props) {
-  const [year1Courses, setYear1Courses] = useState<Course[]>(courses);
-  const [year2Courses, setYear2Courses] = useState<Course[]>([]);
+  const [allCourses, setAllCourses] = useState<Course[]>(courses);
+
+  const coursesByYear = useMemo(() => getCoursesByYear(allCourses), [allCourses]);
+
+  const handleCourseChange = (year: number) => (updated: Course) => {
+    setAllCourses((prev) =>
+      prev.map((c) => (c.id === updated.id ? updated : c))
+    );
+  };
 
   return (
-    <div className="flex flex-col p-10 gap-5">
-      <h1>Dashboard</h1>
-
-      <YearGroup
-        yearNumber={1}
-        courses={year1Courses}
-        totalSlots={8}
-        onCourseClick={(course) => console.log("Clicked course", course)}
-        onCourseChange={(updated) => {
-          console.log("Changed course", updated);
-          setYear1Courses((prev) =>
-            prev.map((c) => (c.id === updated.id ? updated : c))
-          );
-        }}
-      />
-
-      <YearGroup
-        yearNumber={2}
-        courses={year2Courses}
-        totalSlots={8}
-        onCourseClick={(course) => console.log("Clicked course", course)}
-        onCourseChange={(updated) => {
-          console.log("Changed course", updated);
-          setYear2Courses((prev) =>
-            prev.map((c) => (c.id === updated.id ? updated : c))
-          );
-        }}
-      />
+    <div className="flex flex-col gap-8">
+      {[1, 2, 3, 4].map((year) => (
+        <YearGroup
+          key={year}
+          yearNumber={year}
+          courses={coursesByYear[year] ?? []}
+          totalSlots={12}
+          onCourseClick={(course) => console.log("Clicked course", course)}
+          onCourseChange={handleCourseChange(year)}
+        />
+      ))}
     </div>
   );
 }

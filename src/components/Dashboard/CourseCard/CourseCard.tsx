@@ -9,8 +9,9 @@
 import React, { useReducer, useEffect } from 'react';
 
 // Import types
-import Course from '@/types/Course';
+import Course from '../../../types/Course';
 import CourseCardTag from './CourseCardTag';
+
 
 
 /*------------------------------------------------------------------------*/
@@ -80,11 +81,11 @@ const CourseCard: React.FC<Props> = (props) => {
       // Create body
       body = (
         <div className='h-50 w-62.5 border border-[#D9D9D9] border-solid rounded-[15px] bg-[#D7F1C5] select-none flex flex-col justify-between p-3.5'>
-          <div className='CourseCard-id'>
-            {props.course.id}
+          <div className='CourseCard-id font-semibold'>
+            {props.course.title || props.course.id}
           </div>
-          <div className='CourseCard-misc-info pb-4'>
-            ✅ Completed
+          <div className='CourseCard-misc-info pb-4 text-green-700'>
+            ✔ Completed!
           </div>
           <div className='flex CourseCard-tags justify-end gap-2'>
             {props.course.tags && props.course.tags.map((tag) => (
@@ -100,8 +101,8 @@ const CourseCard: React.FC<Props> = (props) => {
                         border-solid rounded-[15px] 
                        ${props.course.eligible ? 'bg-[#E3F1F9]' : 'bg-[#E3E3E3]'} 
                         select-none flex flex-col justify-between p-3.5`}>
-          <div className='CourseCard-id'>
-            {props.course.id}
+          <div className='CourseCard-id font-semibold'>
+            {props.course.title || props.course.id}
           </div>
           <div className='pb-4'>
             <div className='CourseCard-misc-info'>

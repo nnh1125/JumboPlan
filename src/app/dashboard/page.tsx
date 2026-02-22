@@ -1,9 +1,10 @@
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/prisma";
 import { getAuthId } from "@/lib/auth";
-import YearGroup from "./yearGroup";
 import Course from "@/types/Course";
 import DashboardClient from "./DashBoardClient";
+import { parseDegreeToCourses, type DegreeData } from "@/lib/degreeParser";
+import degreeData from "@/data/degree.json";
 
 export default async function DashboardPage() {
   const authId = await getAuthId();
@@ -22,33 +23,28 @@ export default async function DashboardPage() {
     redirect("/onboarding");
   }
 
-  const courses: Course[] = [
-    {
-      id: "CS11",
-      subject: "CS",
-      number: "11",
-      title: "Intro to Computer Science",
-      units: 5,
-      started: true,
-      eligible: true,
-    },
-    {
-      id: "MATH22",
-      subject: "MATH",
-      number: "22",
-      title: "Calculus I",
-      units: 4,
-      started: false,
-      eligible: true,
-    }
-  ]; // TODO: load real courses for this user
+  // Demo: completed course IDs to match design (TODO: load from user progress/DB)
+  const completedIds = new Set([
+    "MATH32",
+    "EN1",
+    "ENG1",
+    "ENG3",
+    "CS11",
+    "MATH34",
+    "MATH42",
+    "CS15",
+    "CS/MATH61",
+    "EM52",
+    "MATH70",
+  ]);
 
-  // load data + render dashboard
+  // Parse degree.json into courses with user progress and eligibility
+  const courses = parseDegreeToCourses(degreeData as DegreeData, completedIds);
+
   return (
-  <div className="flex flex-col p-10 gap-5">
-    <h1>Dashboard</h1>
-    <DashboardClient courses={courses} />
-  </div>
-
+    <div className="flex flex-col p-10 gap-5">
+      <h1>Dashboard</h1>
+      <DashboardClient courses={courses} />
+    </div>
   );
 }
